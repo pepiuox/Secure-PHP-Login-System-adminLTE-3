@@ -13,7 +13,7 @@
         <div class="lockscreen-item">
             <!-- lockscreen image -->
             <div class="lockscreen-image">
-                <img src="<?php echo PATH_SYS; ?>dist/img/user1-128x128.jpg" alt="User Image">
+                <img src="<?php echo PATH_SYS; ?>plugins/adminlte/img/user1-128x128.jpg" alt="User Image">
             </div>
             <!-- /.lockscreen-image -->
 

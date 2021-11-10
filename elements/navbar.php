@@ -26,9 +26,8 @@
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-               
         <li class="nav-item dropdown user-menu">
-            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <?php
                 if (!empty(USERS_AVATARS)) {
                     echo '<img src="<?php echo $base; ?>uploads/' . USERS_AVATARS . '" class="user-image img-circle elevation-2" alt="' . USERS_NAMES . '">';
@@ -36,10 +35,8 @@
                 ?>
                 <i class="far fa-user"></i>
                 <span class="d-none d-md-inline"><?php echo USERS_FULLNAMES; ?></span>
-
             </a>
-            <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                <!-- User image -->
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <li class="user-header bg-primary">
                     <?php
                     if (!empty(USERS_AVATARS)) {
@@ -51,7 +48,6 @@
                         <small>Member since Nov. 2012</small>
                     </p>
                 </li>
-                <!-- Menu Body -->
                 <li class="user-body">
                     <div class="row">
                         <div class="col-4 text-center">
@@ -66,7 +62,6 @@
                     </div>
                     <!-- /.row -->
                 </li>
-                <!-- Menu Footer-->
                 <li class="user-footer">
                     <form method="post">
                         <button class="btn btn-default btn-flat" type="submit" name="profile">Profile</button>
@@ -77,6 +72,6 @@
 
                 </li>
             </ul>
-        </li>        
+        </li>
     </ul>
 </nav>
