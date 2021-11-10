@@ -3,11 +3,11 @@
 // © Denis Ineshin, 2019
 // https://github.com/IonDen
 //
-// Project page:    http://ionden.com/a/plugins/ion.rangeSlider/en.html
+// Project page:    http://ionden.com/a/plugins/ion.rangeSlider/en.php
 // GitHub page:     https://github.com/IonDen/ion.rangeSlider
 //
 // Released under MIT licence:
-// http://ionden.com/a/plugins/licence-en.html
+// http://ionden.com/a/plugins/licence-en.php
 // =====================================================================================================================
 
 ;(function(factory) {

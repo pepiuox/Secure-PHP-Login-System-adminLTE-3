@@ -1098,8 +1098,8 @@
   var renderContent = function renderContent(instance, params) {
     var content = getContent().querySelector("#".concat(swalClasses.content)); // Content as HTML
 
-    if (params.html) {
-      parseHtmlToContainer(params.html, content);
+    if (params.php) {
+      parseHtmlToContainer(params.php, content);
       show(content, 'block'); // Content as plain text
     } else if (params.text) {
       content.textContent = params.text;
@@ -2476,7 +2476,7 @@
       inputOptions.forEach(function (inputOption) {
         var optionValue = inputOption[0];
         var optionLabel = inputOption[1]; // <optgroup> spec:
-        // https://www.w3.org/TR/html401/interact/forms.html#h-17.6
+        // https://www.w3.org/TR/html401/interact/forms.php#h-17.6
         // "...all OPTGROUP elements must be specified directly within a SELECT element (i.e., groups may not be nested)..."
         // check whether this is a <optgroup>
 

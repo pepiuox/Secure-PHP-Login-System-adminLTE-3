@@ -14825,7 +14825,7 @@
 	
 				// For HTML types add a search formatter that will strip the HTML
 				if ( key.match(/^html\-/) ) {
-					_ext.type.search[ key+decimalPlace ] = _ext.type.search.html;
+					_ext.type.search[ key+decimalPlace ] = _ext.type.search.php;
 				}
 			}
 		);

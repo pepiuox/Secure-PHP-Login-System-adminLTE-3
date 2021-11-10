@@ -19,7 +19,7 @@ require 'define.php';
 if (!empty(SITE_PATH)) {
     $base = SITE_PATH;
 } else {
-    $base = 'http://localhost:120/Secure-PHP-Login-adminLTE-3/';
+    $base = 'http://localhost:120/Secure-PHP-Login-System-adminLTE-3/';
 }
 
 $fname = basename($_SERVER['SCRIPT_FILENAME'], '.php');

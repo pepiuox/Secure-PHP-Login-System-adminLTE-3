@@ -84,7 +84,7 @@ if ($total > 0) {
             if ($c_nm === 'imagen') {
                 echo "<script>$('.custom-file-input').on('change',function(){
                             var fileName = document.getElementById('imagen').files[0].name;
-                            $(this).next('.form-control-file').addClass('selected').php(fileName);
+                            $(this).next('.form-control-file').addClass('selected').html(fileName);
                         });</script>";
                 echo '<div class="form-group">
                        <label for="' . $c_nm . '">' . $frmp . ':</label>

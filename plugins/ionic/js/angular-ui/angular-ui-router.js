@@ -2091,7 +2091,7 @@ function $UrlRouterProvider(   $locationProvider,   $urlMatcherFactory) {
       href: function(urlMatcher, params, options) {
         if (!urlMatcher.validates(params)) return null;
 
-        var isHtml5 = $locationProvider.html5Mode();
+        var isHtml5 = $locationProvider.php5Mode();
         if (angular.isObject(isHtml5)) {
           isHtml5 = isHtml5.enabled;
         }
@@ -2434,7 +2434,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
    *
    *   angular.forEach(views, function (config, name) {
    *     var autoName = (state.name + '.' + name).replace('.', '/');
-   *     config.templateUrl = config.templateUrl || '/partials/' + autoName + '.html';
+   *     config.templateUrl = config.templateUrl || '/partials/' + autoName + '.php';
    *     result[name] = config;
    *   });
    *   return result;
@@ -2450,8 +2450,8 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
    * // ...
    *
    * $state.go('home');
-   * // Auto-populates list and item views with /partials/home/contact/list.html,
-   * // and /partials/home/contact/item.html, respectively.
+   * // Auto-populates list and item views with /partials/home/contact/list.php,
+   * // and /partials/home/contact/item.php, respectively.
    * </pre>
    *
    * @param {string} name The name of the builder function to decorate. 
@@ -2520,7 +2520,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
    *   - {array.&lt;object&gt;} - state parameters extracted from the current $location.path() by 
    *     applying the current state
    *
-   * <pre>templateUrl: "home.html"</pre>
+   * <pre>templateUrl: "home.php"</pre>
    * <pre>templateUrl: function(params) {
    *     return myTemplates[params.pageId]; }</pre>
    *
@@ -2618,13 +2618,13 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
    * <pre>views: {
    *     header: {
    *       controller: "headerCtrl",
-   *       templateUrl: "header.html"
+   *       templateUrl: "header.php"
    *     }, body: {
    *       controller: "bodyCtrl",
-   *       templateUrl: "body.html"
+   *       templateUrl: "body.php"
    *     }, footer: {
    *       controller: "footCtrl",
-   *       templateUrl: "footer.html"
+   *       templateUrl: "footer.php"
    *     }
    *   }</pre>
    *
@@ -2632,10 +2632,10 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
    * <pre>views: {
    *     'header@top': {
    *       controller: "msgHeaderCtrl",
-   *       templateUrl: "msgHeader.html"
+   *       templateUrl: "msgHeader.php"
    *     }, 'body': {
    *       controller: "messagesCtrl",
-   *       templateUrl: "messages.html"
+   *       templateUrl: "messages.php"
    *     }
    *   }</pre>
    *

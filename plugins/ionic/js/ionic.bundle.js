@@ -3619,7 +3619,7 @@ ionic.DomUtil.ready(function() {
  *   you will need to set `ionic.Platform.isFullScreen = true` manually.
  *
  * - You can configure the behavior of the web view when the keyboard shows by setting
- *   [android:windowSoftInputMode](http://developer.android.com/reference/android/R.attr.html#windowSoftInputMode)
+ *   [android:windowSoftInputMode](http://developer.android.com/reference/android/R.attr.php#windowSoftInputMode)
  *   to either `adjustPan`, `adjustResize` or `adjustNothing` in your app's
  *   activity in `AndroidManifest.xml`. `adjustResize` is the recommended setting
  *   for Ionic, but if for some reason you do use `adjustPan` you will need to
@@ -7776,7 +7776,7 @@ ionic.scroll = {
     self.el = self.item = opts.el;
     self.scrollEl = opts.scrollEl;
     self.scrollView = opts.scrollView;
-    // Get the True Top of the list el http://www.quirksmode.org/js/findpos.html
+    // Get the True Top of the list el http://www.quirksmode.org/js/findpos.php
     self.listElTrueTop = 0;
     if (self.listEl.offsetParent) {
       var obj = self.listEl;
@@ -14118,7 +14118,7 @@ var trim = function(value) {
 };
 
 // Copied from:
-// http://docs.closure-library.googlecode.com/git/local_closure_goog_string_string.js.source.html#line1021
+// http://docs.closure-library.googlecode.com/git/local_closure_goog_string_string.js.source.php#line1021
 // Prereq: s is a string.
 var escapeForRegexp = function(s) {
   return s.replace(/([-()\[\]{}+?*.$\^|,:#<!\\])/g, '\\$1').
@@ -14196,7 +14196,7 @@ function arrayRemove(array, value) {
  *
  * @example
  <example module="copyExample">
- <file name="index.html">
+ <file name="index.php">
  <div ng-controller="ExampleController">
  <form novalidate class="simple-form">
  Name: <input type="text" ng-model="user.name" /><br />
@@ -14873,7 +14873,7 @@ function getNgAttribute(element, ngAttr) {
  * `ngApp` is the easiest, and most common way to bootstrap an application.
  *
  <example module="ngAppDemo">
-   <file name="index.html">
+   <file name="index.php">
    <div ng-controller="ngAppDemoController">
      I can add: {{a}} + {{b}} =  {{ a+b }}
    </div>
@@ -14889,7 +14889,7 @@ function getNgAttribute(element, ngAttr) {
  * Using `ngStrictDi`, you would see something like this:
  *
  <example ng-app-included="true">
-   <file name="index.html">
+   <file name="index.php">
    <div ng-app="ngAppStrictDemo" ng-strict-di>
        <div ng-controller="GoodController1">
            I can add: {{a}} + {{b}} =  {{ a+b }}
@@ -16795,7 +16795,7 @@ function defaultHandlerWrapper(element, event, handler) {
 function specialMouseHandlerWrapper(target, event, handler) {
   // Refer to jQuery's implementation of mouseenter & mouseleave
   // Read about mouseenter and mouseleave:
-  // http://www.quirksmode.org/js/events_mouse.html#link8
+  // http://www.quirksmode.org/js/events_mouse.php#link8
   var related = event.relatedTarget;
   // For mousenter/leave call the handler if related is outside the target.
   // NB: No relatedTarget if the mouse left/entered the browser window
@@ -18071,7 +18071,7 @@ function $AnchorScrollProvider() {
    * When called, it scrolls to the element related to the specified `hash` or (if omitted) to the
    * current value of {@link ng.$location#hash $location.hash()}, according to the rules specified
    * in the
-   * [HTML5 spec](http://www.w3.org/html/wg/drafts/html/master/browsers.html#the-indicated-part-of-the-document).
+   * [HTML5 spec](http://www.w3.org/html/wg/drafts/html/master/browsers.php#the-indicated-part-of-the-document).
    *
    * It also watches the {@link ng.$location#hash $location.hash()} and automatically scrolls to
    * match any anchor whenever it changes. This can be disabled by calling
@@ -18105,7 +18105,7 @@ function $AnchorScrollProvider() {
    *
    * @example
      <example module="anchorScrollExample">
-       <file name="index.html">
+       <file name="index.php">
          <div id="scrollArea" ng-controller="ScrollController">
            <a ng-click="gotoBottom()">Go to bottom</a>
            <a id="bottom"></a> You're at the bottom!
@@ -18144,7 +18144,7 @@ function $AnchorScrollProvider() {
    *
    * @example
      <example module="anchorScrollOffsetExample">
-       <file name="index.html">
+       <file name="index.php">
          <div class="fixed-header" ng-controller="headerCtrl">
            <a href="" ng-click="gotoAnchor(x)" ng-repeat="x in [1,2,3,4,5]">
              Go to anchor {{x}}
@@ -19548,7 +19548,7 @@ function $BrowserProvider() {
  *
  * @example
    <example module="cacheExampleApp">
-     <file name="index.html">
+     <file name="index.php">
        <div ng-controller="CacheController">
          <input ng-model="newCacheKey" placeholder="Key">
          <input ng-model="newCacheValue" placeholder="Value">
@@ -19873,7 +19873,7 @@ function $CacheFactoryProvider() {
  * Adding via the `script` tag:
  *
  * ```html
- *   <script type="text/ng-template" id="templateId.html">
+ *   <script type="text/ng-template" id="templateId.php">
  *     <p>This is the content of the template</p>
  *   </script>
  * ```
@@ -19887,18 +19887,18 @@ function $CacheFactoryProvider() {
  * ```js
  * var myApp = angular.module('myApp', []);
  * myApp.run(function($templateCache) {
- *   $templateCache.put('templateId.html', 'This is the content of the template');
+ *   $templateCache.put('templateId.php', 'This is the content of the template');
  * });
  * ```
  *
  * To retrieve the template later, simply use it in your HTML:
  * ```html
- * <div ng-include=" 'templateId.html' "></div>
+ * <div ng-include=" 'templateId.php' "></div>
  * ```
  *
  * or get it via Javascript:
  * ```js
- * $templateCache.get('templateId.html')
+ * $templateCache.get('templateId.php')
  * ```
  *
  * See {@link ng.$cacheFactory $cacheFactory}.
@@ -19979,7 +19979,7 @@ function $TemplateCacheProvider() {
  *       priority: 0,
  *       template: '<div></div>', // or // function(tElement, tAttrs) { ... },
  *       // or
- *       // templateUrl: 'directive.html', // or // function(tElement, tAttrs) { ... },
+ *       // templateUrl: 'directive.php', // or // function(tElement, tAttrs) { ... },
  *       transclude: false,
  *       restrict: 'A',
  *       templateNamespace: 'html',
@@ -20624,7 +20624,7 @@ function $TemplateCacheProvider() {
  * </div>
  *
  <example module="compileExample">
-   <file name="index.html">
+   <file name="index.php">
     <script>
       angular.module('compileExample', [], function($compileProvider) {
         // configure new 'compile' directive by passing a directive
@@ -20654,7 +20654,7 @@ function $TemplateCacheProvider() {
       })
       .controller('GreeterController', ['$scope', function($scope) {
         $scope.name = 'Angular';
-        $scope.html = 'Hello {{name}}';
+        $scope.php = 'Hello {{name}}';
       }]);
     </script>
     <div ng-controller="GreeterController">
@@ -20771,7 +20771,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
       ALL_OR_NOTHING_ATTRS = makeMap('ngSrc,ngSrcset,src,srcset'),
       REQUIRE_PREFIX_REGEXP = /^(?:(\^\^?)?(\?)?(\^\^?)?)?/;
 
-  // Ref: http://developers.whatwg.org/webappapis.html#event-handler-idl-attributes
+  // Ref: http://developers.whatwg.org/webappapis.php#event-handler-idl-attributes
   // The assumption is that future DOM event attribute names will begin with
   // 'on' and be composed of only English letters.
   var EVENT_HANDLER_ATTR_REGEXP = /^(on[a-z]+|formaction)$/;
@@ -20986,7 +20986,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
    *   });
    *
    *   myMod.component('myComp', {
-   *     templateUrl: 'views/my-comp.html',
+   *     templateUrl: 'views/my-comp.php',
    *     controller: 'MyCtrl',
    *     controllerAs: 'ctrl',
    *     bindings: {name: '@'}
@@ -22827,7 +22827,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
 
     function getTrustedContext(node, attrNormalizedName) {
       if (attrNormalizedName == "srcdoc") {
-        return $sce.HTML;
+        return $sce.php;
       }
       var tag = nodeName_(node);
       // maction[xlink:href] can source SVG.  It's not limited to <maction>.
@@ -23445,7 +23445,7 @@ function $ControllerProvider() {
  *
  * @example
    <example module="documentExample">
-     <file name="index.html">
+     <file name="index.php">
        <div ng-controller="ExampleController">
          <p>$document title: <b ng-bind="title"></b></p>
          <p>window.document title: <b ng-bind="windowTitle"></b></p>
@@ -24380,7 +24380,7 @@ function $HttpProvider() {
      *
      * @example
 <example module="httpExample">
-<file name="index.html">
+<file name="index.php">
   <div ng-controller="FetchController">
     <select ng-model="method" aria-label="Request method">
       <option>GET</option>
@@ -24388,7 +24388,7 @@ function $HttpProvider() {
     </select>
     <input type="text" ng-model="url" size="80" aria-label="URL" />
     <button id="fetchbtn" ng-click="fetch()">fetch</button><br>
-    <button id="samplegetbtn" ng-click="updateModel('GET', 'http-hello.html')">Sample GET</button>
+    <button id="samplegetbtn" ng-click="updateModel('GET', 'http-hello.php')">Sample GET</button>
     <button id="samplejsonpbtn"
       ng-click="updateModel('JSONP',
                     'https://angularjs.org/greet.php?callback=JSON_CALLBACK&name=Super%20Hero')">
@@ -24407,7 +24407,7 @@ function $HttpProvider() {
     .controller('FetchController', ['$scope', '$http', '$templateCache',
       function($scope, $http, $templateCache) {
         $scope.method = 'GET';
-        $scope.url = 'http-hello.html';
+        $scope.url = 'http-hello.php';
 
         $scope.fetch = function() {
           $scope.code = null;
@@ -24429,7 +24429,7 @@ function $HttpProvider() {
         };
       }]);
 </file>
-<file name="http-hello.html">
+<file name="http-hello.php">
   Hello, $http!
 </file>
 <file name="protractor.js" type="protractor">
@@ -25096,7 +25096,7 @@ $interpolateMinErr.interr = function(text, err) {
  *
  * @example
 <example name="custom-interpolation-markup" module="customInterpolationApp">
-<file name="index.html">
+<file name="index.php">
 <script>
   var customInterpolationApp = angular.module('customInterpolationApp', []);
 
@@ -25268,7 +25268,7 @@ function $InterpolateProvider() {
      * when otherwise untrusted data is used by a directive.
      *
      * <example>
-     *  <file name="index.html">
+     *  <file name="index.php">
      *    <div ng-init="username='A user'">
      *      <p ng-init="apptitle='Escaping demo'">{{apptitle}}: \{\{ username = "defaced value"; \}\}
      *        </p>
@@ -25489,7 +25489,7 @@ function $IntervalProvider() {
       *
       * @example
       * <example module="intervalExample">
-      * <file name="index.html">
+      * <file name="index.php">
       *   <script>
       *     angular.module('intervalExample', [])
       *       .controller('ExampleController', ['$scope', '$interval',
@@ -26399,7 +26399,7 @@ function $LocationProvider() {
    *
    * @returns {Object} html5Mode object if used as getter or itself (chaining) if used as setter
    */
-  this.html5Mode = function(mode) {
+  this.php5Mode = function(mode) {
     if (isBoolean(mode)) {
       html5Mode.enabled = mode;
       return this;
@@ -26669,7 +26669,7 @@ function $LocationProvider() {
            $scope.message = 'Hello World!';
          }]);
      </file>
-     <file name="index.html">
+     <file name="index.php">
        <div ng-controller="LogController">
          <p>Reload this page with open console, enter text and hit the log button...</p>
          <label>Message:
@@ -28961,7 +28961,7 @@ function $ParseProvider() {
  *   This method *returns a new promise* which is resolved or rejected via the return value of the
  *   `successCallback`, `errorCallback` (unless that value is a promise, in which case it is resolved
  *   with the value which is resolved in that promise using
- *   [promise chaining](http://www.html5rocks.com/en/tutorials/es6/promises/#toc-promises-queues)).
+ *   [promise chaining](http://www.php5rocks.com/en/tutorials/es6/promises/#toc-promises-queues)).
  *   It also notifies via the return value of the `notifyCallback` method. The promise cannot be
  *   resolved or rejected from the notifyCallback method.
  *
@@ -31075,7 +31075,7 @@ function $SceDelegateProvider() {
    *    allowed in this array.
    *
    *    The typical usage for the blacklist is to **block
-   *    [open redirects](http://cwe.mitre.org/data/definitions/601.html)** served by your domain as
+   *    [open redirects](http://cwe.mitre.org/data/definitions/601.php)** served by your domain as
    *    these would otherwise be trusted but actually return content from the redirected domain.
    *
    *    Finally, **the blacklist overrides the whitelist** and has the final say.
@@ -31159,7 +31159,7 @@ function $SceDelegateProvider() {
     var trustedValueHolderBase = generateHolderType(),
         byType = {};
 
-    byType[SCE_CONTEXTS.HTML] = generateHolderType(trustedValueHolderBase);
+    byType[SCE_CONTEXTS.php] = generateHolderType(trustedValueHolderBase);
     byType[SCE_CONTEXTS.CSS] = generateHolderType(trustedValueHolderBase);
     byType[SCE_CONTEXTS.URL] = generateHolderType(trustedValueHolderBase);
     byType[SCE_CONTEXTS.JS] = generateHolderType(trustedValueHolderBase);
@@ -31267,7 +31267,7 @@ function $SceDelegateProvider() {
               'Blocked loading resource from url not allowed by $sceDelegate policy.  URL: {0}',
               maybeTrusted.toString());
         }
-      } else if (type === SCE_CONTEXTS.HTML) {
+      } else if (type === SCE_CONTEXTS.php) {
         return htmlSanitizer(maybeTrusted);
       }
       throw $sceMinErr('unsafe', 'Attempting to use an unsafe value in a safe context.');
@@ -31423,7 +31423,7 @@ function $SceDelegateProvider() {
  *
  * | Context             | Notes          |
  * |---------------------|----------------|
- * | `$sce.HTML`         | For HTML that's safe to source into the application.  The {@link ng.directive:ngBindHtml ngBindHtml} directive uses this context for bindings. If an unsafe value is encountered and the {@link ngSanitize $sanitize} module is present this will sanitize the value instead of throwing an error. |
+ * | `$sce.php`         | For HTML that's safe to source into the application.  The {@link ng.directive:ngBindHtml ngBindHtml} directive uses this context for bindings. If an unsafe value is encountered and the {@link ngSanitize $sanitize} module is present this will sanitize the value instead of throwing an error. |
  * | `$sce.CSS`          | For CSS that's safe to source into the application.  Currently unused.  Feel free to use it in your own directives. |
  * | `$sce.URL`          | For URLs that are safe to follow as links.  Currently unused (`<a href=` and `<img src=` sanitize their urls and don't constitute an SCE context. |
  * | `$sce.RESOURCE_URL` | For URLs that are not only safe to follow as links, but whose contents are also safe to include in your application.  Examples include `ng-include`, `src` / `ngSrc` bindings for tags other than `IMG` (e.g. `IFRAME`, `OBJECT`, etc.)  <br><br>Note that `$sce.RESOURCE_URL` makes a stronger statement about the URL than `$sce.URL` does and therefore contexts requiring values trusted for `$sce.RESOURCE_URL` can be used anywhere that values trusted for `$sce.URL` are required. |
@@ -31468,18 +31468,18 @@ function $SceDelegateProvider() {
  *      one level of escaping depending on your templating engine and the way you interpolated
  *      the value.)  Do make use of your platform's escaping mechanism as it might be good
  *      enough before coding your own.  E.g. Ruby has
- *      [Regexp.escape(str)](http://www.ruby-doc.org/core-2.0.0/Regexp.html#method-c-escape)
- *      and Python has [re.escape](http://docs.python.org/library/re.html#re.escape).
+ *      [Regexp.escape(str)](http://www.ruby-doc.org/core-2.0.0/Regexp.php#method-c-escape)
+ *      and Python has [re.escape](http://docs.python.org/library/re.php#re.escape).
  *      Javascript lacks a similar built in function for escaping.  Take a look at Google
  *      Closure library's [goog.string.regExpEscape(s)](
- *      http://docs.closure-library.googlecode.com/git/closure_goog_string_string.js.source.html#line962).
+ *      http://docs.closure-library.googlecode.com/git/closure_goog_string_string.js.source.php#line962).
  *
  * Refer {@link ng.$sceDelegateProvider $sceDelegateProvider} for an example.
  *
  * ## Show me an example using SCE.
  *
  * <example module="mySceApp" deps="angular-sanitize.js">
- * <file name="index.html">
+ * <file name="index.php">
  *   <div ng-controller="AppController as myCtrl">
  *     <i ng-bind-html="myCtrl.explicitlyTrustedHtml" id="explicitlyTrustedHtml"></i><br><br>
  *     <b>User comments</b><br>
@@ -31489,7 +31489,7 @@ function $SceDelegateProvider() {
  *     <div class="well">
  *       <div ng-repeat="userComment in myCtrl.userComments">
  *         <b>{{userComment.name}}</b>:
- *         <span ng-bind-html="userComment.htmlComment" class="htmlComment"></span>
+ *         <span ng-bind-html="userComment.phpComment" class="htmlComment"></span>
  *         <br>
  *       </div>
  *     </div>
@@ -31525,7 +31525,7 @@ function $SceDelegateProvider() {
  * <file name="protractor.js" type="protractor">
  *   describe('SCE doc demo', function() {
  *     it('should sanitize untrusted values', function() {
- *       expect(element.all(by.css('.htmlComment')).first().getInnerHtml())
+ *       expect(element.all(by.css('.phpComment')).first().getInnerHtml())
  *           .toBe('<span>Is <i>anyone</i> reading this?</span>');
  *     });
  *
@@ -31720,7 +31720,7 @@ function $SceProvider() {
      *
      * @description
      * Shorthand method.  `$sce.trustAsHtml(value)` →
-     *     {@link ng.$sceDelegate#trustAs `$sceDelegate.trustAs($sce.HTML, value)`}
+     *     {@link ng.$sceDelegate#trustAs `$sceDelegate.trustAs($sce.php, value)`}
      *
      * @param {*} value The value to trustAs.
      * @returns {*} An object that can be passed to {@link ng.$sce#getTrustedHtml
@@ -31798,10 +31798,10 @@ function $SceProvider() {
      *
      * @description
      * Shorthand method.  `$sce.getTrustedHtml(value)` →
-     *     {@link ng.$sceDelegate#getTrusted `$sceDelegate.getTrusted($sce.HTML, value)`}
+     *     {@link ng.$sceDelegate#getTrusted `$sceDelegate.getTrusted($sce.php, value)`}
      *
      * @param {*} value The value to pass to `$sce.getTrusted`.
-     * @returns {*} The return value of `$sce.getTrusted($sce.HTML, value)`
+     * @returns {*} The return value of `$sce.getTrusted($sce.php, value)`
      */
 
     /**
@@ -31858,7 +31858,7 @@ function $SceProvider() {
      *
      * @description
      * Shorthand method.  `$sce.parseAsHtml(expression string)` →
-     *     {@link ng.$sce#parseAs `$sce.parseAs($sce.HTML, value)`}
+     *     {@link ng.$sce#parseAs `$sce.parseAs($sce.php, value)`}
      *
      * @param {string} expression String expression to compile.
      * @returns {function(context, locals)} a function which represents the compiled expression:
@@ -32390,7 +32390,7 @@ var originUrl = urlResolve(window.location.href);
  * Parsing means that the anchor node's host, hostname, protocol, port, pathname and related
  * properties are all populated to reflect the normalized URL.  This approach has wide
  * compatibility - Safari 1+, Mozilla 1+, Opera 7+,e etc.  See
- * http://www.aptana.com/reference/html/api/HTMLAnchorElement.html
+ * http://www.aptana.com/reference/html/api/HTMLAnchorElement.php
  *
  * Implementation Notes for IE
  * ---------------------------
@@ -32403,7 +32403,7 @@ var originUrl = urlResolve(window.location.href);
  *
  * References:
  *   http://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement
- *   http://www.aptana.com/reference/html/api/HTMLAnchorElement.html
+ *   http://www.aptana.com/reference/html/api/HTMLAnchorElement.php
  *   http://url.spec.whatwg.org/#urlutils
  *   https://github.com/angular/angular.js/pull/2902
  *   http://james.padolsey.com/javascript/parsing-urls-with-the-dom/
@@ -32482,7 +32482,7 @@ function urlIsSameOrigin(requestUrl) {
  *
  * @example
    <example module="windowExample">
-     <file name="index.html">
+     <file name="index.php">
        <script>
          angular.module('windowExample', [])
            .controller('ExampleController', ['$scope', '$window', function($scope, $window) {
@@ -32648,7 +32648,7 @@ function $$CookieReaderProvider() {
  * @return {Function} the filter function
  * @example
    <example name="$filter" module="filterExample">
-     <file name="index.html">
+     <file name="index.php">
        <div ng-controller="MainCtrl">
         <h3>{{ originalText }}</h3>
         <h3>{{ filteredText }}</h3>
@@ -32789,7 +32789,7 @@ function $FilterProvider($provide) {
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="index.php">
        <div ng-init="friends = [{name:'John', phone:'555-1276'},
                                 {name:'Mary', phone:'800-BIG-MARY'},
                                 {name:'Mike', phone:'555-4321'},
@@ -33004,7 +33004,7 @@ var ZERO_CHAR = '0';
  *
  * @example
    <example module="currencyExample">
-     <file name="index.html">
+     <file name="index.php">
        <script>
          angular.module('currencyExample', [])
            .controller('ExampleController', ['$scope', function($scope) {
@@ -33080,7 +33080,7 @@ function currencyFilter($locale) {
  *
  * @example
    <example module="numberFilterExample">
-     <file name="index.html">
+     <file name="index.php">
        <script>
          angular.module('numberFilterExample', [])
            .controller('ExampleController', ['$scope', function($scope) {
@@ -33529,7 +33529,7 @@ var DATE_FORMATS_SPLIT = /((?:[^yMLdHhmsaZEwG']+)|(?:'(?:[^']|'')*')|(?:E+|y+|M+
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="index.php">
        <span ng-non-bindable>{{1288323623006 | date:'medium'}}</span>:
            <span>{{1288323623006 | date:'medium'}}</span><br>
        <span ng-non-bindable>{{1288323623006 | date:'yyyy-MM-dd HH:mm:ss Z'}}</span>:
@@ -33648,7 +33648,7 @@ function dateFilter($locale) {
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="index.php">
        <pre id="default-spacing">{{ {'name':'value'} | json }}</pre>
        <pre id="custom-spacing">{{ {'name':'value'} | json:4 }}</pre>
      </file>
@@ -33716,7 +33716,7 @@ var uppercaseFilter = valueFn(uppercase);
  *
  * @example
    <example module="limitToExample">
-     <file name="index.html">
+     <file name="index.php">
        <script>
          angular.module('limitToExample', [])
            .controller('ExampleController', ['$scope', function($scope) {
@@ -33858,7 +33858,7 @@ function limitToFilter() {
  * by age in descending order (predicate is set to `'-age'`).
  * `reverse` is not set, which means it defaults to `false`.
    <example module="orderByExample">
-     <file name="index.html">
+     <file name="index.php">
        <div ng-controller="ExampleController">
          <table class="friend">
            <tr>
@@ -33891,7 +33891,7 @@ function limitToFilter() {
  * as shown in the next example.
  * @example
    <example module="orderByExample">
-     <file name="index.html">
+     <file name="index.php">
        <div ng-controller="ExampleController">
          <pre>Sorting predicate = {{predicate}}; reverse = {{reverse}}</pre>
          <hr/>
@@ -33954,7 +33954,7 @@ function limitToFilter() {
  *
  * @example
   <example module="orderByExample">
-    <file name="index.html">
+    <file name="index.php">
     <div ng-controller="ExampleController">
       <pre>Sorting predicate = {{predicate}}; reverse = {{reverse}}</pre>
       <table class="friend">
@@ -34209,7 +34209,7 @@ var htmlAnchorDirective = valueFn({
  * This example shows various combinations of `href`, `ng-href` and `ng-click` attributes
  * in links and their different behaviors:
     <example>
-      <file name="index.html">
+      <file name="index.php">
         <input ng-model="value" /><br />
         <a id="link-1" href ng-click="value = 1">link 1</a> (link, don't reload)<br />
         <a id="link-2" href="" ng-click="value = 2">link 2</a> (link, don't reload)<br />
@@ -34345,7 +34345,7 @@ var htmlAnchorDirective = valueFn({
  *
  * @example
     <example>
-      <file name="index.html">
+      <file name="index.php">
         <label>Click me to toggle: <input type="checkbox" ng-model="checked"></label><br/>
         <button ng-model="button" ng-disabled="checked">Button</button>
       </file>
@@ -34381,7 +34381,7 @@ var htmlAnchorDirective = valueFn({
  *
  * @example
     <example>
-      <file name="index.html">
+      <file name="index.php">
         <label>Check me to check both: <input type="checkbox" ng-model="master"></label><br/>
         <input id="checkSlave" type="checkbox" ng-checked="master" aria-label="Slave input">
       </file>
@@ -34415,7 +34415,7 @@ var htmlAnchorDirective = valueFn({
  *
  * @example
     <example>
-      <file name="index.html">
+      <file name="index.php">
         <label>Check me to make text readonly: <input type="checkbox" ng-model="checked"></label><br/>
         <input type="text" ng-readonly="checked" value="I'm Angular" aria-label="Readonly field" />
       </file>
@@ -34449,7 +34449,7 @@ var htmlAnchorDirective = valueFn({
  *
  * @example
     <example>
-      <file name="index.html">
+      <file name="index.php">
         <label>Check me to select: <input type="checkbox" ng-model="selected"></label><br/>
         <select aria-label="ngSelected demo">
           <option>Hello!</option>
@@ -34485,7 +34485,7 @@ var htmlAnchorDirective = valueFn({
  *
  * @example
      <example>
-       <file name="index.html">
+       <file name="index.php">
          <label>Check me check multiple: <input type="checkbox" ng-model="open"></label><br/>
          <details id="details" ng-open="open">
             <summary>Show/Hide me</summary>
@@ -35012,7 +35012,7 @@ function FormController(element, attrs, $scope, $animate, $interpolate) {
  *
  * @example
     <example deps="angular-animate.js" animations="true" fixBase="true" module="formExample">
-      <file name="index.html">
+      <file name="index.php">
        <script>
          angular.module('formExample', [])
            .controller('FormController', ['$scope', function($scope) {
@@ -35228,7 +35228,7 @@ var inputType = {
    *
    * @example
       <example name="text-input-directive" module="textInputExample">
-        <file name="index.html">
+        <file name="index.php">
          <script>
            angular.module('textInputExample', [])
              .controller('ExampleController', ['$scope', function($scope) {
@@ -35325,7 +35325,7 @@ var inputType = {
      *
      * @example
      <example name="date-input-directive" module="dateInputExample">
-     <file name="index.html">
+     <file name="index.php">
        <script>
           angular.module('dateInputExample', [])
             .controller('DateController', ['$scope', function($scope) {
@@ -35428,7 +35428,7 @@ var inputType = {
     *
     * @example
     <example name="datetimelocal-input-directive" module="dateExample">
-    <file name="index.html">
+    <file name="index.php">
       <script>
         angular.module('dateExample', [])
           .controller('DateController', ['$scope', function($scope) {
@@ -35532,7 +35532,7 @@ var inputType = {
    *
    * @example
    <example name="time-input-directive" module="timeExample">
-   <file name="index.html">
+   <file name="index.php">
      <script>
       angular.module('timeExample', [])
         .controller('DateController', ['$scope', function($scope) {
@@ -35635,7 +35635,7 @@ var inputType = {
     *
     * @example
     <example name="week-input-directive" module="weekExample">
-    <file name="index.html">
+    <file name="index.php">
       <script>
       angular.module('weekExample', [])
         .controller('DateController', ['$scope', function($scope) {
@@ -35741,7 +35741,7 @@ var inputType = {
    *
    * @example
    <example name="month-input-directive" module="monthExample">
-   <file name="index.html">
+   <file name="index.php">
      <script>
       angular.module('monthExample', [])
         .controller('DateController', ['$scope', function($scope) {
@@ -35823,7 +35823,7 @@ var inputType = {
    * ## Issues with HTML5 constraint validation
    *
    * In browsers that follow the
-   * [HTML5 specification](https://html.spec.whatwg.org/multipage/forms.html#number-state-%28type=number%29),
+   * [HTML5 specification](https://html.spec.whatwg.org/multipage/forms.php#number-state-%28type=number%29),
    * `input[number]` does not work as expected with {@link ngModelOptions `ngModelOptions.allowInvalid`}.
    * If a non-number is entered in the input, the browser will report the value as an empty string,
    * which means the view / model values in `ngModel` and subsequently the scope value
@@ -35860,7 +35860,7 @@ var inputType = {
    *
    * @example
       <example name="number-input-directive" module="numberExample">
-        <file name="index.html">
+        <file name="index.php">
          <script>
            angular.module('numberExample', [])
              .controller('ExampleController', ['$scope', function($scope) {
@@ -35958,7 +35958,7 @@ var inputType = {
    *
    * @example
       <example name="url-input-directive" module="urlExample">
-        <file name="index.html">
+        <file name="index.php">
          <script>
            angular.module('urlExample', [])
              .controller('ExampleController', ['$scope', function($scope) {
@@ -36057,7 +36057,7 @@ var inputType = {
    *
    * @example
       <example name="email-input-directive" module="emailExample">
-        <file name="index.html">
+        <file name="index.php">
          <script>
            angular.module('emailExample', [])
              .controller('ExampleController', ['$scope', function($scope) {
@@ -36133,7 +36133,7 @@ var inputType = {
    *
    * @example
       <example name="radio-input-directive" module="radioExample">
-        <file name="index.html">
+        <file name="index.php">
          <script>
            angular.module('radioExample', [])
              .controller('ExampleController', ['$scope', function($scope) {
@@ -36195,7 +36195,7 @@ var inputType = {
    *
    * @example
       <example name="checkbox-input-directive" module="checkboxExample">
-        <file name="index.html">
+        <file name="index.php">
          <script>
            angular.module('checkboxExample', [])
              .controller('ExampleController', ['$scope', function($scope) {
@@ -36752,7 +36752,7 @@ function checkboxInputType(scope, element, attr, ctrl, $sniffer, $browser, $filt
  *
  * @example
     <example name="input-directive" module="inputExample">
-      <file name="index.html">
+      <file name="index.php">
        <script>
           angular.module('inputExample', [])
             .controller('ExampleController', ['$scope', function($scope) {
@@ -36890,7 +36890,7 @@ var CONSTANT_VALUE_REGEXP = /^(true|false|\d+)$/;
  *
  * @example
     <example name="ngValue-directive" module="valueExample">
-      <file name="index.html">
+      <file name="index.php">
        <script>
           angular.module('valueExample', [])
             .controller('ExampleController', ['$scope', function($scope) {
@@ -36971,7 +36971,7 @@ var ngValueDirective = function() {
  * @example
  * Enter a name in the Live Preview text box; the greeting below the text box changes instantly.
    <example module="bindExample">
-     <file name="index.html">
+     <file name="index.php">
        <script>
          angular.module('bindExample', [])
            .controller('ExampleController', ['$scope', function($scope) {
@@ -37031,7 +37031,7 @@ var ngBindDirective = ['$compile', function($compile) {
  * @example
  * Try it here: enter text in text box and watch the greeting change.
    <example module="bindExample">
-     <file name="index.html">
+     <file name="index.php">
        <script>
          angular.module('bindExample', [])
            .controller('ExampleController', ['$scope', function($scope) {
@@ -37104,7 +37104,7 @@ var ngBindTemplateDirective = ['$interpolate', '$compile', function($interpolate
  * @example
 
    <example module="bindHtmlExample" deps="angular-sanitize.js">
-     <file name="index.html">
+     <file name="index.php">
        <div ng-controller="ExampleController">
         <p ng-bind-html="myHTML"></p>
        </div>
@@ -37177,7 +37177,7 @@ var ngBindHtmlDirective = ['$sce', '$parse', '$compile', function($sce, $parse, 
  *
  * @example
  * <example name="ngChange-directive" module="changeExample">
- *   <file name="index.html">
+ *   <file name="index.php">
  *     <script>
  *       angular.module('changeExample', [])
  *         .controller('ExampleController', ['$scope', function($scope) {
@@ -37389,7 +37389,7 @@ function classDirective(name, selector) {
  *
  * @example Example that demonstrates basic bindings via ngClass directive.
    <example>
-     <file name="index.html">
+     <file name="index.php">
        <p ng-class="{strike: deleted, bold: important, 'has-error': error}">Map Syntax Example</p>
        <label>
           <input type="checkbox" ng-model="deleted">
@@ -37482,7 +37482,7 @@ function classDirective(name, selector) {
    The example below demonstrates how to perform animations using ngClass.
 
    <example module="ngAnimate" deps="angular-animate.js" animations="true">
-     <file name="index.html">
+     <file name="index.php">
       <input id="setbtn" type="button" value="set" ng-click="myVar='my-class'">
       <input id="clearbtn" type="button" value="clear" ng-click="myVar=''">
       <br>
@@ -37545,7 +37545,7 @@ var ngClassDirective = classDirective('', true);
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="index.php">
         <ol ng-init="names=['John', 'Mary', 'Cate', 'Suz']">
           <li ng-repeat="name in names">
            <span ng-class-odd="'odd'" ng-class-even="'even'">
@@ -37593,7 +37593,7 @@ var ngClassOddDirective = classDirective('Odd', 0);
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="index.php">
         <ol ng-init="names=['John', 'Mary', 'Cate', 'Suz']">
           <li ng-repeat="name in names">
            <span ng-class-odd="'odd'" ng-class-even="'even'">
@@ -37659,7 +37659,7 @@ var ngClassEvenDirective = classDirective('Even', 1);
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="index.php">
         <div id="template1" ng-cloak>{{ 'hello' }}</div>
         <div id="template2" class="ng-cloak">{{ 'world' }}</div>
      </file>
@@ -37743,7 +37743,7 @@ var ngCloakDirective = ngDirective({
  * This example demonstrates the `controller as` syntax.
  *
  * <example name="ngControllerAs" module="controllerAsExample">
- *   <file name="index.html">
+ *   <file name="index.php">
  *    <div id="ctrl-as-exmpl" ng-controller="SettingsController1 as settings">
  *      <label>Name: <input type="text" ng-model="settings.name"/></label>
  *      <button ng-click="settings.greet()">greet</button><br/>
@@ -37826,7 +37826,7 @@ var ngCloakDirective = ngDirective({
  * This example demonstrates the "attach to `$scope`" style of controller.
  *
  * <example name="ngController" module="controllerExample">
- *  <file name="index.html">
+ *  <file name="index.php">
  *   <div id="ctrl-exmpl" ng-controller="SettingsController2">
  *     <label>Name: <input type="text" ng-model="name"/></label>
  *     <button ng-click="greet()">greet</button><br/>
@@ -37999,7 +37999,7 @@ var ngControllerDirective = [function() {
       // Note: the suffix `.csp` in the example name triggers
       // csp mode in our http server!
       <example name="example.csp" module="cspExample" ng-csp="true">
-        <file name="index.html">
+        <file name="index.php">
           <div ng-controller="MainController as ctrl">
             <div>
               <button ng-click="ctrl.inc()" id="inc">Increment</button>
@@ -38134,7 +38134,7 @@ var ngControllerDirective = [function() {
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="index.php">
       <button ng-click="count = count + 1" ng-init="count=0">
         Increment
       </button>
@@ -38209,7 +38209,7 @@ forEach(
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="index.php">
       <button ng-dblclick="count = count + 1" ng-init="count=0">
         Increment (on double click)
       </button>
@@ -38233,7 +38233,7 @@ forEach(
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="index.php">
       <button ng-mousedown="count = count + 1" ng-init="count=0">
         Increment (on mouse down)
       </button>
@@ -38257,7 +38257,7 @@ forEach(
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="index.php">
       <button ng-mouseup="count = count + 1" ng-init="count=0">
         Increment (on mouse up)
       </button>
@@ -38280,7 +38280,7 @@ forEach(
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="index.php">
       <button ng-mouseover="count = count + 1" ng-init="count=0">
         Increment (when mouse is over)
       </button>
@@ -38304,7 +38304,7 @@ forEach(
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="index.php">
       <button ng-mouseenter="count = count + 1" ng-init="count=0">
         Increment (when mouse enters)
       </button>
@@ -38328,7 +38328,7 @@ forEach(
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="index.php">
       <button ng-mouseleave="count = count + 1" ng-init="count=0">
         Increment (when mouse leaves)
       </button>
@@ -38352,7 +38352,7 @@ forEach(
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="index.php">
       <button ng-mousemove="count = count + 1" ng-init="count=0">
         Increment (when mouse moves)
       </button>
@@ -38376,7 +38376,7 @@ forEach(
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="index.php">
       <input ng-keydown="count = count + 1" ng-init="count=0">
       key down count: {{count}}
      </file>
@@ -38398,7 +38398,7 @@ forEach(
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="index.php">
        <p>Typing in the input box below updates the key count</p>
        <input ng-keyup="count = count + 1" ng-init="count=0"> key up count: {{count}}
 
@@ -38425,7 +38425,7 @@ forEach(
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="index.php">
       <input ng-keypress="count = count + 1" ng-init="count=0">
       key press count: {{count}}
      </file>
@@ -38458,7 +38458,7 @@ forEach(
  *
  * @example
    <example module="submitExample">
-     <file name="index.html">
+     <file name="index.php">
       <script>
         angular.module('submitExample', [])
           .controller('ExampleController', ['$scope', function($scope) {
@@ -38554,7 +38554,7 @@ forEach(
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="index.php">
       <input ng-copy="copied=true" ng-init="copied=false; value='copy me'" ng-model="value">
       copied: {{copied}}
      </file>
@@ -38575,7 +38575,7 @@ forEach(
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="index.php">
       <input ng-cut="cut=true" ng-init="cut=false; value='cut me'" ng-model="value">
       cut: {{cut}}
      </file>
@@ -38596,7 +38596,7 @@ forEach(
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="index.php">
       <input ng-paste="paste=true" ng-init="paste=false" placeholder='paste here'>
       pasted: {{paste}}
      </file>
@@ -38651,7 +38651,7 @@ forEach(
  *
  * @example
   <example module="ngAnimate" deps="angular-animate.js" animations="true">
-    <file name="index.html">
+    <file name="index.php">
       <label>Click me: <input type="checkbox" ng-model="checked" ng-init="checked=true" /></label><br/>
       Show when checked:
       <span ng-if="checked" class="animate-if">
@@ -38763,7 +38763,7 @@ var ngIfDirective = ['$animate', '$compile', function($animate, $compile) {
  * @priority 400
  *
  * @param {string} ngInclude|src angular expression evaluating to URL. If the source is a string constant,
- *                 make sure you wrap it in **single** quotes, e.g. `src="'myPartialTemplate.html'"`.
+ *                 make sure you wrap it in **single** quotes, e.g. `src="'myPartialTemplate.php'"`.
  * @param {string=} onload Expression to evaluate when a new partial is loaded.
  *                  <div class="alert alert-warning">
  *                  **Note:** When using onload on SVG elements in IE11, the browser will try to call
@@ -38781,7 +38781,7 @@ var ngIfDirective = ['$animate', '$compile', function($animate, $compile) {
  *
  * @example
   <example module="includeExample" deps="angular-animate.js" animations="true">
-    <file name="index.html">
+    <file name="index.php">
      <div ng-controller="ExampleController">
        <select ng-model="template" ng-options="t.name for t in templates">
         <option value="">(blank)</option>
@@ -38797,16 +38797,16 @@ var ngIfDirective = ['$animate', '$compile', function($animate, $compile) {
       angular.module('includeExample', ['ngAnimate'])
         .controller('ExampleController', ['$scope', function($scope) {
           $scope.templates =
-            [ { name: 'template1.html', url: 'template1.html'},
-              { name: 'template2.html', url: 'template2.html'} ];
+            [ { name: 'template1.php', url: 'template1.php'},
+              { name: 'template2.php', url: 'template2.php'} ];
           $scope.template = $scope.templates[0];
         }]);
      </file>
-    <file name="template1.html">
-      Content of template1.html
+    <file name="template1.php">
+      Content of template1.php
     </file>
-    <file name="template2.html">
-      Content of template2.html
+    <file name="template2.php">
+      Content of template2.php
     </file>
     <file name="animations.css">
       .slide-animate-container {
@@ -38851,11 +38851,11 @@ var ngIfDirective = ['$animate', '$compile', function($animate, $compile) {
       var templateSelect = element(by.model('template'));
       var includeElem = element(by.css('[ng-include]'));
 
-      it('should load template1.html', function() {
-        expect(includeElem.getText()).toMatch(/Content of template1.html/);
+      it('should load template1.php', function() {
+        expect(includeElem.getText()).toMatch(/Content of template1.php/);
       });
 
-      it('should load template2.html', function() {
+      it('should load template2.php', function() {
         if (browser.params.browser == 'firefox') {
           // Firefox can't handle using selects
           // See https://github.com/angular/protractor/issues/480
@@ -38863,7 +38863,7 @@ var ngIfDirective = ['$animate', '$compile', function($animate, $compile) {
         }
         templateSelect.click();
         templateSelect.all(by.css('option')).get(2).click();
-        expect(includeElem.getText()).toMatch(/Content of template2.html/);
+        expect(includeElem.getText()).toMatch(/Content of template2.php/);
       });
 
       it('should change to blank', function() {
@@ -39066,7 +39066,7 @@ var ngIncludeFillContentDirective = ['$compile',
  *
  * @example
    <example module="initExample">
-     <file name="index.html">
+     <file name="index.php">
    <script>
      angular.module('initExample', [])
        .controller('ExampleController', ['$scope', function($scope) {
@@ -39130,7 +39130,7 @@ var ngInitDirective = ngDirective({
  *          $scope.names = ['morpheus', 'neo', 'trinity'];
  *        }]);
  *   </file>
- *   <file name="index.html">
+ *   <file name="index.php">
  *    <form name="myForm" ng-controller="ExampleController">
  *      <label>List: <input name="namesInput" ng-model="names" ng-list required></label>
  *      <span role="alert">
@@ -39170,7 +39170,7 @@ var ngInitDirective = ngDirective({
  *
  * ### Example - splitting on newline
  * <example name="ngList-directive-newlines">
- *   <file name="index.html">
+ *   <file name="index.php">
  *    <textarea ng-model="list" ng-list="&#10;" ng-trim="false"></textarea>
  *    <pre>{{ list | json }}</pre>
  *   </file>
@@ -39418,7 +39418,7 @@ is set to `true`. The parse error is stored in `ngModel.$error.parse`.
           };
         }]);
     </file>
-    <file name="index.html">
+    <file name="index.php">
       <form name="myForm">
        <div contenteditable
             name="myWidget" ng-model="userContent"
@@ -39712,7 +39712,7 @@ var NgModelController = ['$scope', '$exceptionHandler', '$attrs', '$element', '$
    *       };
    *     }]);
    *   </file>
-   *   <file name="index.html">
+   *   <file name="index.php">
    *     <div ng-controller="CancelUpdateController">
    *        <p>Both of these inputs are only updated if they are blurred. Hitting escape should
    *        empty them. Follow these steps and observe the difference:</p>
@@ -40229,7 +40229,7 @@ var NgModelController = ['$scope', '$exceptionHandler', '$attrs', '$element', '$
  *
  * @example
  * <example deps="angular-animate.js" animations="true" fixBase="true" module="inputExample">
-     <file name="index.html">
+     <file name="index.php">
        <script>
         angular.module('inputExample', [])
           .controller('ExampleController', ['$scope', function($scope) {
@@ -40279,7 +40279,7 @@ var NgModelController = ['$scope', '$exceptionHandler', '$attrs', '$element', '$
  *
  * @example
  * <example name="ngModel-getter-setter" module="getterSetterExample">
-     <file name="index.html">
+     <file name="index.php">
        <div ng-controller="ExampleController">
          <form name="userForm">
            <label>Name:
@@ -40416,7 +40416,7 @@ var DEFAULT_REGEXP = /(\s+|^)default(\s+|$)/;
   pressed while the input field is focused, the value is reset to the value in the current model.
 
   <example name="ngModelOptions-directive-blur" module="optionsExample">
-    <file name="index.html">
+    <file name="index.php">
       <div ng-controller="ExampleController">
         <form name="userForm">
           <label>Name:
@@ -40473,7 +40473,7 @@ var DEFAULT_REGEXP = /(\s+|^)default(\s+|$)/;
   If the `Clear` button is pressed, any debounced action is canceled and the value becomes empty.
 
   <example name="ngModelOptions-directive-debounce" module="optionsExample">
-    <file name="index.html">
+    <file name="index.php">
       <div ng-controller="ExampleController">
         <form name="userForm">
           <label>Name:
@@ -40498,7 +40498,7 @@ var DEFAULT_REGEXP = /(\s+|^)default(\s+|$)/;
   This one shows how to bind to getter/setters:
 
   <example name="ngModelOptions-directive-getter-setter" module="getterSetterExample">
-    <file name="index.html">
+    <file name="index.php">
       <div ng-controller="ExampleController">
         <form name="userForm">
           <label>Name:
@@ -40676,7 +40676,7 @@ function isObjectEmpty(obj) {
  *
  * @example
     <example>
-      <file name="index.html">
+      <file name="index.php">
         <div>Normal: {{1 + 2}}</div>
         <div ng-non-bindable>Ignored: {{1 + 2}}</div>
       </file>
@@ -40848,7 +40848,7 @@ var ngOptionsMinErr = minErr('ngOptions');
  *
  * @example
     <example module="selectExample">
-      <file name="index.html">
+      <file name="index.php">
         <script>
         angular.module('selectExample', [])
           .controller('ExampleController', ['$scope', function($scope) {
@@ -41465,12 +41465,12 @@ var ngOptionsDirective = ['$compile', '$parse', function($compile, $parse) {
  * These rules are bundled with angular.js, but can be overridden
  * (see {@link guide/i18n Angular i18n} dev guide). You configure ngPluralize directive
  * by specifying the mappings between
- * [plural categories](http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html)
+ * [plural categories](http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.php)
  * and the strings to be displayed.
  *
  * # Plural categories and explicit number rules
  * There are two
- * [plural categories](http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html)
+ * [plural categories](http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.php)
  * in Angular's default en-US locale: "one" and "other".
  *
  * While a plural category may match many numbers (for example, in en-US locale, "other" can match
@@ -41548,7 +41548,7 @@ var ngOptionsDirective = ['$compile', '$parse', function($compile, $parse) {
  *
  * @example
     <example module="pluralizeExample">
-      <file name="index.html">
+      <file name="index.php">
         <script>
           angular.module('pluralizeExample', [])
             .controller('ExampleController', ['$scope', function($scope) {
@@ -41927,7 +41927,7 @@ var ngPluralizeDirective = ['$locale', '$interpolate', '$log', function($locale,
  * This example uses `ngRepeat` to display a list of people. A filter is used to restrict the displayed
  * results by name. New (entering) and removed (leaving) items are animated.
   <example module="ngRepeat" name="ngRepeat" deps="angular-animate.js" animations="true">
-    <file name="index.html">
+    <file name="index.php">
       <div ng-controller="repeatController">
         I have {{friends.length}} friends. They are:
         <input type="search" ng-model="q" placeholder="filter friends..." aria-label="filter friends" />
@@ -42345,7 +42345,7 @@ var NG_HIDE_IN_PROGRESS_CLASS = 'ng-hide-animate';
  *
  * @example
   <example module="ngAnimate" deps="angular-animate.js" animations="true">
-    <file name="index.html">
+    <file name="index.php">
       Click me: <input type="checkbox" ng-model="checked" aria-label="Toggle ngHide"><br/>
       <div>
         Show:
@@ -42512,7 +42512,7 @@ var ngShowDirective = ['$animate', function($animate) {
  *
  * @example
   <example module="ngAnimate" deps="angular-animate.js" animations="true">
-    <file name="index.html">
+    <file name="index.php">
       Click me: <input type="checkbox" ng-model="checked" aria-label="Toggle ngShow"><br/>
       <div>
         Show:
@@ -42604,7 +42604,7 @@ var ngHideDirective = ['$animate', function($animate) {
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="index.php">
         <input type="button" value="set color" ng-click="myStyle={color:'red'}">
         <input type="button" value="set background" ng-click="myStyle={'background-color':'blue'}">
         <input type="button" value="clear" ng-click="myStyle={}">
@@ -42697,7 +42697,7 @@ var ngStyleDirective = ngDirective(function(scope, element, attr) {
  *
  * @example
   <example module="switchExample" deps="angular-animate.js" animations="true">
-    <file name="index.html">
+    <file name="index.php">
       <div ng-controller="ExampleController">
         <select ng-model="selection" ng-options="item for item in items">
         </select>
@@ -42869,7 +42869,7 @@ var ngSwitchDefaultDirective = ngDirective({
  * ### Basic transclusion
  * This example demonstrates basic transclusion of content into a component directive.
  * <example name="simpleTranscludeExample" module="transcludeExample">
- *   <file name="index.html">
+ *   <file name="index.php">
  *     <script>
  *       angular.module('transcludeExample', [])
  *        .directive('pane', function(){
@@ -42914,7 +42914,7 @@ var ngSwitchDefaultDirective = ngDirective({
  * is displayed if no transcluded content is provided.
  *
  * <example module="transcludeFallbackContentExample">
- * <file name="index.html">
+ * <file name="index.php">
  * <script>
  * angular.module('transcludeFallbackContentExample', [])
  * .directive('myButton', function(){
@@ -42949,7 +42949,7 @@ var ngSwitchDefaultDirective = ngDirective({
  * ### Multi-slot transclusion
  * This example demonstrates using multi-slot transclusion in a component directive.
  * <example name="multiSlotTranscludeExample" module="multiSlotTranscludeExample">
- *   <file name="index.html">
+ *   <file name="index.php">
  *    <style>
  *      .title, .footer {
  *        background-color: gray
@@ -43052,12 +43052,12 @@ var ngTranscludeDirective = ngDirective({
  *
  * @example
   <example>
-    <file name="index.html">
-      <script type="text/ng-template" id="/tpl.html">
+    <file name="index.php">
+      <script type="text/ng-template" id="/tpl.php">
         Content of the template.
       </script>
 
-      <a ng-click="currentTpl='/tpl.html'" id="tpl-link">Load inlined template</a>
+      <a ng-click="currentTpl='/tpl.php'" id="tpl-link">Load inlined template</a>
       <div id="tpl-content" ng-include src="currentTpl"></div>
     </file>
     <file name="protractor.js" type="protractor">
@@ -43288,7 +43288,7 @@ var SelectController =
  * ### Simple `select` elements with static options
  *
  * <example name="static-select" module="staticSelect">
- * <file name="index.html">
+ * <file name="index.php">
  * <div ng-controller="ExampleController">
  *   <form name="myForm">
  *     <label for="singleSelect"> Single select: </label><br>
@@ -43335,7 +43335,7 @@ var SelectController =
  *
  * ### Using `ngRepeat` to generate `select` options
  * <example name="ngrepeat-select" module="ngrepeatSelect">
- * <file name="index.html">
+ * <file name="index.php">
  * <div ng-controller="ExampleController">
  *   <form name="myForm">
  *     <label for="repeatSelect"> Repeat select: </label>
@@ -43367,7 +43367,7 @@ var SelectController =
  * See the {@link ngOptions ngOptions documentation} for more `ngOptions` usage examples.
  *
  * <example name="select-with-default-values" module="defaultValueSelect">
- * <file name="index.html">
+ * <file name="index.php">
  * <div ng-controller="ExampleController">
  *   <form name="myForm">
  *     <label for="mySelect">Make a choice:</label>
@@ -43398,7 +43398,7 @@ var SelectController =
  * ### Binding `select` to a non-string value via `ngModel` parsing / formatting
  *
  * <example name="select-with-non-string-options" module="nonStringSelect">
- *   <file name="index.html">
+ *   <file name="index.php">
  *     <select ng-model="model.id" convert-to-number>
  *       <option value="0">Zero</option>
  *       <option value="1">One</option>
@@ -43594,7 +43594,7 @@ var styleDirective = valueFn({
  *
  * @example
  * <example name="ngRequiredDirective" module="ngRequiredExample">
- *   <file name="index.html">
+ *   <file name="index.php">
  *     <script>
  *       angular.module('ngRequiredExample', [])
  *         .controller('ExampleController', ['$scope', function($scope) {
@@ -43687,7 +43687,7 @@ var requiredDirective = function() {
  *
  * @example
  * <example name="ngPatternDirective" module="ngPatternExample">
- *   <file name="index.html">
+ *   <file name="index.php">
  *     <script>
  *       angular.module('ngPatternExample', [])
  *         .controller('ExampleController', ['$scope', function($scope) {
@@ -43784,7 +43784,7 @@ var patternDirective = function() {
  *
  * @example
  * <example name="ngMaxlengthDirective" module="ngMaxlengthExample">
- *   <file name="index.html">
+ *   <file name="index.php">
  *     <script>
  *       angular.module('ngMaxlengthExample', [])
  *         .controller('ExampleController', ['$scope', function($scope) {
@@ -43870,7 +43870,7 @@ var maxlengthDirective = function() {
  *
  * @example
  * <example name="ngMinlengthDirective" module="ngMinlengthExample">
- *   <file name="index.html">
+ *   <file name="index.php">
  *     <script>
  *       angular.module('ngMinlengthExample', [])
  *         .controller('ExampleController', ['$scope', function($scope) {
@@ -44547,7 +44547,7 @@ var $$rAFSchedulerFactory = ['$$rAF', function($$rAF) {
  *
  * @example
  * <example module="ngAnimateChildren" name="ngAnimateChildren" deps="angular-animate.js" animations="true">
-     <file name="index.html">
+     <file name="index.php">
        <div ng-controller="mainController as main">
          <label>Show container? <input type="checkbox" ng-model="main.enterElement" /></label>
          <label>Animate children? <input type="checkbox" ng-model="main.animateChildren" /></label>
@@ -47362,7 +47362,7 @@ var $$AnimationProvider = ['$animateProvider', function($animateProvider) {
  * <example name="ngAnimateSwap-directive" module="ngAnimateSwapExample"
  *          deps="angular-animate.js"
  *          animations="true" fixBase="true">
- *   <file name="index.html">
+ *   <file name="index.php">
  *     <div class="container" ng-controller="AppCtrl">
  *       <div ng-animate-swap="number" class="cell swap-animation" ng-class="colorClass(number)">
  *         {{ number }}
@@ -47905,16 +47905,16 @@ var ngAnimateSwapDirective = ['$animate', '$rootScope', function($animate, $root
  * Say for example we have the following template code:
  *
  * ```html
- * <!-- index.html -->
+ * <!-- index.php -->
  * <div ng-view class="view-animation">
  * </div>
  *
- * <!-- home.html -->
+ * <!-- home.php -->
  * <a href="#/banner-page">
  *   <img src="./banner.jpg" class="banner" ng-animate-ref="banner">
  * </a>
  *
- * <!-- banner-page.html -->
+ * <!-- banner-page.php -->
  * <img src="./banner.jpg" class="banner" ng-animate-ref="banner">
  * ```
  *
@@ -47997,7 +47997,7 @@ var ngAnimateSwapDirective = ['$animate', '$rootScope', function($animate, $root
            id="anchoringExample"
            deps="angular-animate.js;angular-route.js"
            animations="true">
-    <file name="index.html">
+    <file name="index.php">
       <a href="#/">Home</a>
       <hr />
       <div class="view-container">
@@ -48008,11 +48008,11 @@ var ngAnimateSwapDirective = ['$animate', '$rootScope', function($animate, $root
       angular.module('anchoringExample', ['ngAnimate', 'ngRoute'])
         .config(['$routeProvider', function($routeProvider) {
           $routeProvider.when('/', {
-            templateUrl: 'home.html',
+            templateUrl: 'home.php',
             controller: 'HomeController as home'
           });
           $routeProvider.when('/profile/:id', {
-            templateUrl: 'profile.html',
+            templateUrl: 'profile.php',
             controller: 'ProfileController as profile'
           });
         }])
@@ -48041,7 +48041,7 @@ var ngAnimateSwapDirective = ['$animate', '$rootScope', function($animate, $root
           this.id = record.id;
         }]);
     </file>
-    <file name="home.html">
+    <file name="home.php">
       <h2>Welcome to the home page</h1>
       <p>Please click on an element</p>
       <a class="record"
@@ -48051,7 +48051,7 @@ var ngAnimateSwapDirective = ['$animate', '$rootScope', function($animate, $root
         {{ record.title }}
       </a>
     </file>
-    <file name="profile.html">
+    <file name="profile.php">
       <div class="profile record" ng-animate-ref="{{ profile.id }}">
         {{ profile.title }}
       </div>
@@ -48275,7 +48275,7 @@ var $sanitizeMinErr = angular.$$minErr('$sanitize');
  *
  * @example
    <example module="sanitizeExample" deps="angular-sanitize.js">
-   <file name="index.html">
+   <file name="index.php">
      <script>
          angular.module('sanitizeExample', ['ngSanitize'])
            .controller('ExampleController', ['$scope', '$sce', function($scope, $sce) {
@@ -48435,15 +48435,15 @@ var SURROGATE_PAIR_REGEXP = /[\uD800-\uDBFF][\uDC00-\uDFFF]/g,
 
 
 // Good source of info about elements and attributes
-// http://dev.w3.org/html5/spec/Overview.html#semantics
-// http://simon.html5.org/html-elements
+// http://dev.w3.org/html5/spec/Overview.php#semantics
+// http://simon.php5.org/html-elements
 
 // Safe Void Elements - HTML5
-// http://dev.w3.org/html5/spec/Overview.html#void-elements
+// http://dev.w3.org/html5/spec/Overview.php#void-elements
 var voidElements = toMap("area,br,col,hr,img,wbr");
 
 // Elements that you can, intentionally, leave open (and which close themselves)
-// http://dev.w3.org/html5/spec/Overview.html#optional-tags
+// http://dev.w3.org/html5/spec/Overview.php#optional-tags
 var optionalEndTagBlockElements = toMap("colgroup,dd,dt,li,p,tbody,td,tfoot,th,thead,tr"),
     optionalEndTagInlineElements = toMap("rp,rt"),
     optionalEndTagElements = angular.extend({},
@@ -48770,7 +48770,7 @@ angular.module('ngSanitize', []).provider('$sanitize', $SanitizeProvider);
  *
  * @example
    <example module="linkyExample" deps="angular-sanitize.js">
-     <file name="index.html">
+     <file name="index.php">
        <div ng-controller="ExampleController">
        Snippet: <textarea ng-model="snippet" cols="60" rows="3"></textarea>
        <table>
@@ -51035,7 +51035,7 @@ function $UrlRouterProvider(   $locationProvider,   $urlMatcherFactory) {
       href: function(urlMatcher, params, options) {
         if (!urlMatcher.validates(params)) return null;
 
-        var isHtml5 = $locationProvider.html5Mode();
+        var isHtml5 = $locationProvider.php5Mode();
         if (angular.isObject(isHtml5)) {
           isHtml5 = isHtml5.enabled;
         }
@@ -51378,7 +51378,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
    *
    *   angular.forEach(views, function (config, name) {
    *     var autoName = (state.name + '.' + name).replace('.', '/');
-   *     config.templateUrl = config.templateUrl || '/partials/' + autoName + '.html';
+   *     config.templateUrl = config.templateUrl || '/partials/' + autoName + '.php';
    *     result[name] = config;
    *   });
    *   return result;
@@ -51394,8 +51394,8 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
    * // ...
    *
    * $state.go('home');
-   * // Auto-populates list and item views with /partials/home/contact/list.html,
-   * // and /partials/home/contact/item.html, respectively.
+   * // Auto-populates list and item views with /partials/home/contact/list.php,
+   * // and /partials/home/contact/item.php, respectively.
    * </pre>
    *
    * @param {string} name The name of the builder function to decorate. 
@@ -51464,7 +51464,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
    *   - {array.&lt;object&gt;} - state parameters extracted from the current $location.path() by 
    *     applying the current state
    *
-   * <pre>templateUrl: "home.html"</pre>
+   * <pre>templateUrl: "home.php"</pre>
    * <pre>templateUrl: function(params) {
    *     return myTemplates[params.pageId]; }</pre>
    *
@@ -51562,13 +51562,13 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
    * <pre>views: {
    *     header: {
    *       controller: "headerCtrl",
-   *       templateUrl: "header.html"
+   *       templateUrl: "header.php"
    *     }, body: {
    *       controller: "bodyCtrl",
-   *       templateUrl: "body.html"
+   *       templateUrl: "body.php"
    *     }, footer: {
    *       controller: "footCtrl",
-   *       templateUrl: "footer.html"
+   *       templateUrl: "footer.php"
    *     }
    *   }</pre>
    *
@@ -51576,10 +51576,10 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
    * <pre>views: {
    *     'header@top': {
    *       controller: "msgHeaderCtrl",
-   *       templateUrl: "msgHeader.html"
+   *       templateUrl: "msgHeader.php"
    *     }, 'body': {
    *       controller: "messagesCtrl",
-   *       templateUrl: "messages.html"
+   *       templateUrl: "messages.php"
    *     }
    *   }</pre>
    *
@@ -55623,7 +55623,7 @@ function($ionicLoadingConfig, $ionicBody, $ionicTemplateLoader, $ionicBackdrop, 
  *
  * @usage
  * ```html
- * <script id="my-modal.html" type="text/ng-template">
+ * <script id="my-modal.php" type="text/ng-template">
  *   <ion-modal-view>
  *     <ion-header-bar>
  *       <h1 class="title">My Modal title</h1>
@@ -55637,7 +55637,7 @@ function($ionicLoadingConfig, $ionicBody, $ionicTemplateLoader, $ionicBackdrop, 
  * ```js
  * angular.module('testApp', ['ionic'])
  * .controller('MyController', function($scope, $ionicModal) {
- *   $ionicModal.fromTemplateUrl('my-modal.html', {
+ *   $ionicModal.fromTemplateUrl('my-modal.php', {
  *     scope: $scope,
  *     animation: 'slide-in-up'
  *   }).then(function(modal) {
@@ -56200,8 +56200,8 @@ IonicModule
          * @description
          * Add Cordova event listeners, such as `pause`, `resume`, `volumedownbutton`, `batterylow`,
          * `offline`, etc. More information about available event types can be found in
-         * [Cordova's event documentation](https://cordova.apache.org/docs/en/latest/cordova/events/events.html).
-         * @param {string} type Cordova [event type](https://cordova.apache.org/docs/en/latest/cordova/events/events.html).
+         * [Cordova's event documentation](https://cordova.apache.org/docs/en/latest/cordova/events/events.php).
+         * @param {string} type Cordova [event type](https://cordova.apache.org/docs/en/latest/cordova/events/events.php).
          * @param {function} callback Called when the Cordova event is fired.
          * @returns {function} Returns a deregistration function to remove the event listener.
          */
@@ -56272,7 +56272,7 @@ IonicModule
  *   <button ng-click="openPopover($event)">Open Popover</button>
  * </p>
  *
- * <script id="my-popover.html" type="text/ng-template">
+ * <script id="my-popover.php" type="text/ng-template">
  *   <ion-popover-view>
  *     <ion-header-bar>
  *       <h1 class="title">My Popover Title</h1>
@@ -56295,7 +56295,7 @@ IonicModule
  *   });
  *
  *   // .fromTemplateUrl() method
- *   $ionicPopover.fromTemplateUrl('my-popover.html', {
+ *   $ionicPopover.fromTemplateUrl('my-popover.php', {
  *     scope: $scope
  *   }).then(function(popover) {
  *     $scope.popover = popover;
@@ -57553,7 +57553,7 @@ IonicModule
  * State templates are cached automatically, but you can optionally cache other templates.
  *
  * ```js
- * $ionicTemplateCache('myNgIncludeTemplate.html');
+ * $ionicTemplateCache('myNgIncludeTemplate.php');
  * ```
  *
  * Optionally disable all preemptive caching with the `$ionicConfigProvider` or individual states by setting `prefetchTemplate`
@@ -57572,14 +57572,14 @@ IonicModule
  *         url: "/tab",
  *         abstract: true,
  *         prefetchTemplate: false,
- *         templateUrl: "tabs-templates/tabs.html"
+ *         templateUrl: "tabs-templates/tabs.php"
  *       })
  *       .state('tabs.home', {
  *         url: "/home",
  *         views: {
  *           'home-tab': {
  *             prefetchTemplate: false,
- *             templateUrl: "tabs-templates/home.html",
+ *             templateUrl: "tabs-templates/home.php",
  *             controller: 'HomeTabCtrl'
  *           }
  *         }
@@ -60258,7 +60258,7 @@ IonicModule
       deltaY = e.touches[0].screenY - startY;
 
       // how far have we dragged so far?
-      // kitkat fix for touchcancel events http://updates.html5rocks.com/2014/05/A-More-Compatible-Smoother-Touch
+      // kitkat fix for touchcancel events http://updates.php5rocks.com/2014/05/A-More-Compatible-Smoother-Touch
       // Only do this if we're not on crosswalk
       if (ionic.Platform.isAndroid() && ionic.Platform.version() === 4.4 && !ionic.Platform.isCrosswalk() && scrollParent.scrollTop === 0 && deltaY > 0) {
         isDragging = true;
@@ -65241,20 +65241,20 @@ IonicModule
  *   $stateProvider
  *   .state('index', {
  *     url: '/',
- *     templateUrl: 'home.html'
+ *     templateUrl: 'home.php'
  *   })
  *   .state('music', {
  *     url: '/music',
- *     templateUrl: 'music.html'
+ *     templateUrl: 'music.php'
  *   });
  * });
  * ```
  * Then on app start, $stateProvider will look at the url, see if it matches the index state,
- * and then try to load home.html into the `<ion-nav-view>`.
+ * and then try to load home.php into the `<ion-nav-view>`.
  *
  * Pages are loaded by the URLs given. One simple way to create templates in Angular is to put
  * them directly into your HTML file and use the `<script type="text/ng-template">` syntax.
- * So here is one way to put home.html into our app:
+ * So here is one way to put home.php into our app:
  *
  * ```html
  * <script id="home" type="text/ng-template">
@@ -65313,7 +65313,7 @@ IonicModule
  * $stateProvider.state('myState', {
  *    cache: false,
  *    url : '/myUrl',
- *    templateUrl : 'my-template.html'
+ *    templateUrl : 'my-template.php'
  * })
  * ```
  *

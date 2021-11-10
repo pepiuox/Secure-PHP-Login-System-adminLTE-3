@@ -1,7 +1,7 @@
 <?php
 define('DOMAIN_SITE', 'www.yourdomain.com');
-define('SITE_PATH', 'http://localhost:120/Secure-PHP-Login-adminLTE-3/');
- define('SITE_NAME', 'Secure PHP Login adminLTE 3');
+define('SITE_PATH', 'http://localhost:120/Secure-PHP-Login-System-adminLTE-3/');
+ define('SITE_NAME', 'SPHPLSA3');
  define('SITE_DESCRIPTION', 'Your keywords for your domains');
  define('SITE_KEYWORDS', 'Your keywords for your domains');
  define('SITE_CLASSIFICATION', 'Your keywords for your domains');

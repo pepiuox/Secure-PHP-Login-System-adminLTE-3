@@ -156,7 +156,7 @@ Docs & License: https://fullcalendar.io/
             }
             return '<a class="' + classes.join(' ') + '"' +
                 (eventDef.url ?
-                    ' href="' + core.htmlEscape(eventDef.url) + '"' :
+                    ' href="' + core.phpEscape(eventDef.url) + '"' :
                     '') +
                 (skinCss ?
                     ' style="' + skinCss + '"' :
@@ -165,15 +165,15 @@ Docs & License: https://fullcalendar.io/
                 '<div class="fc-content">' +
                 (timeText ?
                     '<div class="fc-time"' +
-                        ' data-start="' + core.htmlEscape(startTimeText) + '"' +
-                        ' data-full="' + core.htmlEscape(fullTimeText) + '"' +
+                        ' data-start="' + core.phpEscape(startTimeText) + '"' +
+                        ' data-full="' + core.phpEscape(fullTimeText) + '"' +
                         '>' +
-                        '<span>' + core.htmlEscape(timeText) + '</span>' +
+                        '<span>' + core.phpEscape(timeText) + '</span>' +
                         '</div>' :
                     '') +
                 (eventDef.title ?
                     '<div class="fc-title">' +
-                        core.htmlEscape(eventDef.title) +
+                        core.phpEscape(eventDef.title) +
                         '</div>' :
                     '') +
                 '</div>' +
@@ -610,7 +610,7 @@ Docs & License: https://fullcalendar.io/
                     '<td class="fc-axis fc-time ' + theme.getClass('widgetContent') + '">' +
                         (isLabeled ?
                             '<span>' + // for matchCellWidths
-                                core.htmlEscape(dateEnv.format(slotDate, this.labelFormat)) +
+                                core.phpEscape(dateEnv.format(slotDate, this.labelFormat)) +
                                 '</span>' :
                             '') +
                         '</td>';
@@ -681,7 +681,7 @@ Docs & License: https://fullcalendar.io/
             if (isRtl) {
                 parts.reverse();
             }
-            skeletonEl = this.contentSkeletonEl = core.htmlToElement('<div class="fc-content-skeleton">' +
+            skeletonEl = this.contentSkeletonEl = core.phpToElement('<div class="fc-content-skeleton">' +
                 '<table>' +
                 '<tr>' + parts.join('') + '</tr>' +
                 '</table>' +
@@ -998,7 +998,7 @@ Docs & License: https://fullcalendar.io/
                     return '' +
                         '<th class="fc-axis fc-week-number ' + theme.getClass('widgetHeader') + '" ' + _this.axisStyleAttr() + '>' +
                         core.buildGotoAnchorHtml(// aside from link, important for matchCellWidths
-                        options, dateEnv, { date: range.start, type: 'week', forceOff: dayCnt > 1 }, core.htmlEscape(weekText) // inner HTML
+                        options, dateEnv, { date: range.start, type: 'week', forceOff: dayCnt > 1 }, core.phpEscape(weekText) // inner HTML
                         ) +
                         '</th>';
                 }

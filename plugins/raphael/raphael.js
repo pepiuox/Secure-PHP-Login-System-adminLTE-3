@@ -1959,7 +1959,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
         },
         a2c = function (x1, y1, rx, ry, angle, large_arc_flag, sweep_flag, x2, y2, recursive) {
             // for more information of where this math came from visit:
-            // http://www.w3.org/TR/SVG11/implnote.html#ArcImplementationNotes
+            // http://www.w3.org/TR/SVG11/implnote.php#ArcImplementationNotes
             var _120 = PI * 120 / 180,
                 rad = PI / 180 * (+angle || 0),
                 res = [],
@@ -3477,7 +3477,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
      | "M10,20L30,40"
      * Here we can see two commands: “M”, with arguments `(10, 20)` and “L” with arguments `(30, 40)`. Upper case letter mean command is absolute, lower case—relative.
      *
-     # <p>Here is short list of commands available, for more details see <a href="http://www.w3.org/TR/SVG/paths.html#PathData" title="Details of a path's data attribute's format are described in the SVG specification.">SVG path string format</a>.</p>
+     # <p>Here is short list of commands available, for more details see <a href="http://www.w3.org/TR/SVG/paths.php#PathData" title="Details of a path's data attribute's format are described in the SVG specification.">SVG path string format</a>.</p>
      # <table><thead><tr><th>Command</th><th>Name</th><th>Parameters</th></tr></thead><tbody>
      # <tr><td>M</td><td>moveto</td><td>(x y)+</td></tr>
      # <tr><td>Z</td><td>closepath</td><td>(none)</td></tr>
@@ -4156,7 +4156,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
      #     <li>“elastic”</li>
      #     <li>“bounce”</li>
      # </ul>
-     # <p>See also <a href="http://raphaeljs.com/easing.html">Easing demo</a>.</p>
+     # <p>See also <a href="http://raphaeljs.com/easing.php">Easing demo</a>.</p>
     \*/
     var ef = R.easing_formulas = {
         linear: function (n) {
@@ -5527,7 +5527,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
         loaded = true;
     });
 
-    // Firefox <3.6 fix: http://webreflection.blogspot.com/2009/11/195-chars-to-help-lazy-loading.html
+    // Firefox <3.6 fix: http://webreflection.blogspot.com/2009/11/195-chars-to-help-lazy-loading.php
     (function (doc, loaded, f) {
         if (doc.readyState == null && doc.addEventListener){
             doc.addEventListener(loaded, f = function () {
@@ -6586,7 +6586,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
      * gradient from white to black or “`r(0.25, 0.75)#fff-#000`” – gradient from white to black with focus point
      * at 0.25, 0.75. Focus point coordinates are in 0..1 range. Radial gradients can only be applied to circles and ellipses.
      > Path String
-     # <p>Please refer to <a href="http://www.w3.org/TR/SVG/paths.html#PathData" title="Details of a path’s data attribute’s format are described in the SVG specification.">SVG documentation regarding path string</a>. Raphaël fully supports it.</p>
+     # <p>Please refer to <a href="http://www.w3.org/TR/SVG/paths.php#PathData" title="Details of a path’s data attribute’s format are described in the SVG specification.">SVG documentation regarding path string</a>. Raphaël fully supports it.</p>
      > Colour Parsing
      # <ul>
      #     <li>Colour name (“<code>red</code>”, “<code>green</code>”, “<code>cornflowerblue</code>”, etc)</li>

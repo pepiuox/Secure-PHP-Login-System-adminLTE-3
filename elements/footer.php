@@ -80,7 +80,7 @@
                 for (var prop in obj) {
                     t += prop + ': ' + obj[prop] + '\r\n'
                 }
-                $('#result').php(t)
+                $('#result').html(t)
             },
             onLoad: function (obj) {
                 //
@@ -152,7 +152,7 @@
                 for (var prop in obj) {
                     t += prop + ': ' + obj[prop] + '\r\n'
                 }
-                $('#result').php(t)
+                $('#result').html(t)
             },
             onLoad: function (obj) {
                 //
@@ -778,7 +778,7 @@
                 var x = item.datapoint[0].toFixed(2),
                         y = item.datapoint[1].toFixed(2)
 
-                $('#line-chart-tooltip').php(item.series.label + ' of ' + x + ' = ' + y)
+                $('#line-chart-tooltip').html(item.series.label + ' of ' + x + ' = ' + y)
                         .css({
                             top: item.pageY + 5,
                             left: item.pageX + 5
@@ -1241,7 +1241,7 @@
                         endDate: moment();
                     },
                     function (start, end) {
-                        $('#reportrange span').php(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+                        $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
                     }
             );
 

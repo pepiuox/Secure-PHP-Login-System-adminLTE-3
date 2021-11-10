@@ -8684,8 +8684,8 @@ Docs & License: https://fullcalendar.io/
     exports.globalDefaults = globalDefaults;
     exports.greatestDurationDenominator = greatestDurationDenominator;
     exports.hasBgRendering = hasBgRendering;
-    exports.htmlEscape = htmlEscape;
-    exports.htmlToElement = htmlToElement;
+    exports.phpEscape = htmlEscape;
+    exports.phpToElement = htmlToElement;
     exports.insertAfterElement = insertAfterElement;
     exports.interactionSettingsStore = interactionSettingsStore;
     exports.interactionSettingsToStore = interactionSettingsToStore;

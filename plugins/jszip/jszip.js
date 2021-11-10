@@ -554,9 +554,9 @@ var generateZipParts = function(streamInfo, streamedContent, streamingEnded, off
     }
 
     // date
-    // @see http://www.delorie.com/djgpp/doc/rbinter/it/52/13.html
-    // @see http://www.delorie.com/djgpp/doc/rbinter/it/65/16.html
-    // @see http://www.delorie.com/djgpp/doc/rbinter/it/66/16.html
+    // @see http://www.delorie.com/djgpp/doc/rbinter/it/52/13.php
+    // @see http://www.delorie.com/djgpp/doc/rbinter/it/65/16.php
+    // @see http://www.delorie.com/djgpp/doc/rbinter/it/66/16.php
 
     dosTime = date.getUTCHours();
     dosTime = dosTime << 6;
@@ -1236,7 +1236,7 @@ utils.inherits(NodejsStreamOutputAdapter, Readable);
 
 /**
 * A nodejs stream using a worker as source.
-* @see the SourceWrapper in http://nodejs.org/api/stream.html
+* @see the SourceWrapper in http://nodejs.org/api/stream.php
 * @constructor
 * @param {StreamHelper} helper the helper wrapping the worker
 * @param {Object} options the nodejs stream options
@@ -3678,7 +3678,7 @@ ZipEntries.prototype = {
 
             if (isGarbage) {
                 throw new Error("Can't find end of central directory : is this a zip file ? " +
-                                "If it is, see https://stuk.github.io/jszip/documentation/howto/read_zip.html");
+                                "If it is, see https://stuk.github.io/jszip/documentation/howto/read_zip.php");
             } else {
                 throw new Error("Corrupted zip: can't find end of central directory");
             }
@@ -3846,7 +3846,7 @@ ZipEntry.prototype = {
         reader.skip(22);
         // in some zip created on windows, the filename stored in the central dir contains \ instead of /.
         // Strangely, the filename here is OK.
-        // I would love to treat these zip files as corrupted (see http://www.info-zip.org/FAQ.html#backslashes
+        // I would love to treat these zip files as corrupted (see http://www.info-zip.org/FAQ.php#backslashes
         // or APPNOTE#4.4.17.1, "All slashes MUST be forward slashes '/'") but there are a lot of bad zip generators...
         // Search "unzip mismatching "local" filename continuing with "central" filename version" on
         // the internet.
@@ -4650,7 +4650,7 @@ var Z_DEFLATED  = 8;
  * - `strategy`
  * - `dictionary`
  *
- * [http://zlib.net/manual.html#Advanced](http://zlib.net/manual.html#Advanced)
+ * [http://zlib.net/manual.php#Advanced](http://zlib.net/manual.php#Advanced)
  * for more information on these.
  *
  * Additional options, for internal needs:
@@ -4902,7 +4902,7 @@ Deflate.prototype.onEnd = function (status) {
  * - strategy
  * - dictionary
  *
- * [http://zlib.net/manual.html#Advanced](http://zlib.net/manual.html#Advanced)
+ * [http://zlib.net/manual.php#Advanced](http://zlib.net/manual.php#Advanced)
  * for more information on these.
  *
  * Sugar (options):
@@ -5030,7 +5030,7 @@ var toString = Object.prototype.toString;
  * - `windowBits`
  * - `dictionary`
  *
- * [http://zlib.net/manual.html#Advanced](http://zlib.net/manual.html#Advanced)
+ * [http://zlib.net/manual.php#Advanced](http://zlib.net/manual.php#Advanced)
  * for more information on these.
  *
  * Additional options, for internal needs:
@@ -5320,7 +5320,7 @@ Inflate.prototype.onEnd = function (status) {
  *
  * - windowBits
  *
- * [http://zlib.net/manual.html#Advanced](http://zlib.net/manual.html#Advanced)
+ * [http://zlib.net/manual.php#Advanced](http://zlib.net/manual.php#Advanced)
  * for more information.
  *
  * Sugar (options):

@@ -232,16 +232,16 @@ Docs & License: https://fullcalendar.io/
             if (seg.isStart) {
                 timeText = this.getTimeText(eventRange);
                 if (timeText) {
-                    timeHtml = '<span class="fc-time">' + core.htmlEscape(timeText) + '</span>';
+                    timeHtml = '<span class="fc-time">' + core.phpEscape(timeText) + '</span>';
                 }
             }
             titleHtml =
                 '<span class="fc-title">' +
-                    (core.htmlEscape(eventDef.title || '') || '&nbsp;') + // we always want one line of height
+                    (core.phpEscape(eventDef.title || '') || '&nbsp;') + // we always want one line of height
                     '</span>';
             return '<a class="' + classes.join(' ') + '"' +
                 (eventDef.url ?
-                    ' href="' + core.htmlEscape(eventDef.url) + '"' :
+                    ' href="' + core.phpEscape(eventDef.url) + '"' :
                     '') +
                 (skinCss ?
                     ' style="' + skinCss + '"' :
@@ -488,7 +488,7 @@ Docs & License: https://fullcalendar.io/
             var rowStructs = this.rowStructs = this.renderSegRows(segs);
             // inject each new event skeleton into each associated row
             this.dayGrid.rowEls.forEach(function (rowNode, row) {
-                var skeletonEl = core.htmlToElement('<div class="fc-mirror-skeleton"><table></table></div>'); // will be absolutely positioned
+                var skeletonEl = core.phpToElement('<div class="fc-mirror-skeleton"><table></table></div>'); // will be absolutely positioned
                 var skeletonTopEl;
                 var skeletonTop;
                 // If there is an original segment, match the top position. Otherwise, put it at the row's top level
@@ -560,7 +560,7 @@ Docs & License: https://fullcalendar.io/
             else {
                 className = type.toLowerCase();
             }
-            skeletonEl = core.htmlToElement('<div class="fc-' + className + '-skeleton">' +
+            skeletonEl = core.phpToElement('<div class="fc-' + className + '-skeleton">' +
                 '<table><tr></tr></table>' +
                 '</div>');
             trEl = skeletonEl.getElementsByTagName('tr')[0];
@@ -627,7 +627,7 @@ Docs & License: https://fullcalendar.io/
             this.el.innerHTML =
                 '<div class="fc-header ' + theme.getClass('popoverHeader') + '">' +
                     '<span class="fc-title">' +
-                    core.htmlEscape(title) +
+                    core.phpEscape(title) +
                     '</span>' +
                     '<span class="fc-close ' + theme.getIconClass('close') + '"></span>' +
                     '</div>' +
@@ -691,7 +691,7 @@ Docs & License: https://fullcalendar.io/
             }
             for (var _i = 0, _a = props.cells; _i < _a.length; _i++) {
                 var cell = _a[_i];
-                parts.push(renderCellHtml(cell.date, props.dateProfile, this.context, cell.htmlAttrs));
+                parts.push(renderCellHtml(cell.date, props.dateProfile, this.context, cell.phpAttrs));
             }
             if (!props.cells.length) {
                 parts.push('<td class="fc-day ' + this.context.theme.getClass('widgetContent') + '"></td>');
@@ -1305,7 +1305,7 @@ Docs & License: https://fullcalendar.io/
                     return '' +
                         '<th class="fc-week-number ' + theme.getClass('widgetHeader') + '" ' + _this.weekNumberStyleAttr() + '>' +
                         '<span>' + // needed for matchCellWidths
-                        core.htmlEscape(options.weekLabel) +
+                        core.phpEscape(options.weekLabel) +
                         '</span>' +
                         '</th>';
                 }

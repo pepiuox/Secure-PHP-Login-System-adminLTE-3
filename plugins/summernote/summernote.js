@@ -990,7 +990,7 @@ function isElement(node) {
 }
 /**
  * ex) br, col, embed, hr, img, input, ...
- * @see http://www.w3.org/html/wg/drafts/html/master/syntax.html#void-elements
+ * @see http://www.w3.org/html/wg/drafts/html/master/syntax.php#void-elements
  */
 
 
@@ -3327,7 +3327,7 @@ var range_WrappedRange = /*#__PURE__*/function () {
  *  * BoundaryPoint: a point of dom tree
  *  * BoundaryPoints: two boundaryPoints corresponding to the start and the end of the Range
  *
- * See to http://www.w3.org/TR/DOM-Level-2-Traversal-Range/ranges.html#Level-2-Range-Position
+ * See to http://www.w3.org/TR/DOM-Level-2-Traversal-Range/ranges.php#Level-2-Range-Position
  */
 
 
@@ -9033,11 +9033,11 @@ var VideoDialog_VideoDialog = /*#__PURE__*/function () {
       var vimMatch = url.match(vimRegExp);
       var dmRegExp = /.+dailymotion.com\/(video|hub)\/([^_]+)[^#]*(#video=([^_&]+))?/;
       var dmMatch = url.match(dmRegExp);
-      var youkuRegExp = /\/\/v\.youku\.com\/v_show\/id_(\w+)=*\.html/;
+      var youkuRegExp = /\/\/v\.youku\.com\/v_show\/id_(\w+)=*\.php/;
       var youkuMatch = url.match(youkuRegExp);
       var qqRegExp = /\/\/v\.qq\.com.*?vid=(.+)/;
       var qqMatch = url.match(qqRegExp);
-      var qqRegExp2 = /\/\/v\.qq\.com\/x?\/?(page|cover).*?\/([^\/]+)\.html\??.*/;
+      var qqRegExp2 = /\/\/v\.qq\.com\/x?\/?(page|cover).*?\/([^\/]+)\.php\??.*/;
       var qqMatch2 = url.match(qqRegExp2);
       var mp4RegExp = /^.+.(mp4|m4v)$/;
       var mp4Match = url.match(mp4RegExp);
@@ -9076,7 +9076,7 @@ var VideoDialog_VideoDialog = /*#__PURE__*/function () {
         $video = external_root_jQuery_commonjs2_jquery_commonjs_jquery_amd_jquery_default()('<iframe webkitallowfullscreen mozallowfullscreen allowfullscreen>').attr('frameborder', 0).attr('height', '498').attr('width', '510').attr('src', '//player.youku.com/embed/' + youkuMatch[1]);
       } else if (qqMatch && qqMatch[1].length || qqMatch2 && qqMatch2[2].length) {
         var vid = qqMatch && qqMatch[1].length ? qqMatch[1] : qqMatch2[2];
-        $video = external_root_jQuery_commonjs2_jquery_commonjs_jquery_amd_jquery_default()('<iframe webkitallowfullscreen mozallowfullscreen allowfullscreen>').attr('frameborder', 0).attr('height', '310').attr('width', '500').attr('src', 'https://v.qq.com/txp/iframe/player.html?vid=' + vid + '&amp;auto=0');
+        $video = external_root_jQuery_commonjs2_jquery_commonjs_jquery_amd_jquery_default()('<iframe webkitallowfullscreen mozallowfullscreen allowfullscreen>').attr('frameborder', 0).attr('height', '310').attr('width', '500').attr('src', 'https://v.qq.com/txp/iframe/player.php?vid=' + vid + '&amp;auto=0');
       } else if (mp4Match || oggMatch || webmMatch) {
         $video = external_root_jQuery_commonjs2_jquery_commonjs_jquery_amd_jquery_default()('<video controls>').attr('src', url).attr('width', '640').attr('height', '360');
       } else if (fbMatch && fbMatch[0].length) {

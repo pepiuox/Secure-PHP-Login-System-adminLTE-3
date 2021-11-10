@@ -2440,7 +2440,7 @@ function($ionicLoadingConfig, $ionicBody, $ionicTemplateLoader, $ionicBackdrop, 
  *
  * @usage
  * ```html
- * <script id="my-modal.html" type="text/ng-template">
+ * <script id="my-modal.php" type="text/ng-template">
  *   <ion-modal-view>
  *     <ion-header-bar>
  *       <h1 class="title">My Modal title</h1>
@@ -2454,7 +2454,7 @@ function($ionicLoadingConfig, $ionicBody, $ionicTemplateLoader, $ionicBackdrop, 
  * ```js
  * angular.module('testApp', ['ionic'])
  * .controller('MyController', function($scope, $ionicModal) {
- *   $ionicModal.fromTemplateUrl('my-modal.html', {
+ *   $ionicModal.fromTemplateUrl('my-modal.php', {
  *     scope: $scope,
  *     animation: 'slide-in-up'
  *   }).then(function(modal) {
@@ -3017,8 +3017,8 @@ IonicModule
          * @description
          * Add Cordova event listeners, such as `pause`, `resume`, `volumedownbutton`, `batterylow`,
          * `offline`, etc. More information about available event types can be found in
-         * [Cordova's event documentation](https://cordova.apache.org/docs/en/latest/cordova/events/events.html).
-         * @param {string} type Cordova [event type](https://cordova.apache.org/docs/en/latest/cordova/events/events.html).
+         * [Cordova's event documentation](https://cordova.apache.org/docs/en/latest/cordova/events/events.php).
+         * @param {string} type Cordova [event type](https://cordova.apache.org/docs/en/latest/cordova/events/events.php).
          * @param {function} callback Called when the Cordova event is fired.
          * @returns {function} Returns a deregistration function to remove the event listener.
          */
@@ -3089,7 +3089,7 @@ IonicModule
  *   <button ng-click="openPopover($event)">Open Popover</button>
  * </p>
  *
- * <script id="my-popover.html" type="text/ng-template">
+ * <script id="my-popover.php" type="text/ng-template">
  *   <ion-popover-view>
  *     <ion-header-bar>
  *       <h1 class="title">My Popover Title</h1>
@@ -3112,7 +3112,7 @@ IonicModule
  *   });
  *
  *   // .fromTemplateUrl() method
- *   $ionicPopover.fromTemplateUrl('my-popover.html', {
+ *   $ionicPopover.fromTemplateUrl('my-popover.php', {
  *     scope: $scope
  *   }).then(function(popover) {
  *     $scope.popover = popover;
@@ -4370,7 +4370,7 @@ IonicModule
  * State templates are cached automatically, but you can optionally cache other templates.
  *
  * ```js
- * $ionicTemplateCache('myNgIncludeTemplate.html');
+ * $ionicTemplateCache('myNgIncludeTemplate.php');
  * ```
  *
  * Optionally disable all preemptive caching with the `$ionicConfigProvider` or individual states by setting `prefetchTemplate`
@@ -4389,14 +4389,14 @@ IonicModule
  *         url: "/tab",
  *         abstract: true,
  *         prefetchTemplate: false,
- *         templateUrl: "tabs-templates/tabs.html"
+ *         templateUrl: "tabs-templates/tabs.php"
  *       })
  *       .state('tabs.home', {
  *         url: "/home",
  *         views: {
  *           'home-tab': {
  *             prefetchTemplate: false,
- *             templateUrl: "tabs-templates/home.html",
+ *             templateUrl: "tabs-templates/home.php",
  *             controller: 'HomeTabCtrl'
  *           }
  *         }
@@ -7075,7 +7075,7 @@ IonicModule
       deltaY = e.touches[0].screenY - startY;
 
       // how far have we dragged so far?
-      // kitkat fix for touchcancel events http://updates.html5rocks.com/2014/05/A-More-Compatible-Smoother-Touch
+      // kitkat fix for touchcancel events http://updates.php5rocks.com/2014/05/A-More-Compatible-Smoother-Touch
       // Only do this if we're not on crosswalk
       if (ionic.Platform.isAndroid() && ionic.Platform.version() === 4.4 && !ionic.Platform.isCrosswalk() && scrollParent.scrollTop === 0 && deltaY > 0) {
         isDragging = true;
@@ -12058,20 +12058,20 @@ IonicModule
  *   $stateProvider
  *   .state('index', {
  *     url: '/',
- *     templateUrl: 'home.html'
+ *     templateUrl: 'home.php'
  *   })
  *   .state('music', {
  *     url: '/music',
- *     templateUrl: 'music.html'
+ *     templateUrl: 'music.php'
  *   });
  * });
  * ```
  * Then on app start, $stateProvider will look at the url, see if it matches the index state,
- * and then try to load home.html into the `<ion-nav-view>`.
+ * and then try to load home.php into the `<ion-nav-view>`.
  *
  * Pages are loaded by the URLs given. One simple way to create templates in Angular is to put
  * them directly into your HTML file and use the `<script type="text/ng-template">` syntax.
- * So here is one way to put home.html into our app:
+ * So here is one way to put home.php into our app:
  *
  * ```html
  * <script id="home" type="text/ng-template">
@@ -12130,7 +12130,7 @@ IonicModule
  * $stateProvider.state('myState', {
  *    cache: false,
  *    url : '/myUrl',
- *    templateUrl : 'my-template.html'
+ *    templateUrl : 'my-template.php'
  * })
  * ```
  *

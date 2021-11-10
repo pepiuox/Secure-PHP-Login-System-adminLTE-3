@@ -325,7 +325,7 @@ $level = new AccessLevel();
                     'border-color': currColor,
                     'color': '#fff'
                 }).addClass('external-event')
-                event.php(val)
+                event.html(val)
                 $('#external-events').prepend(event)
 
                 //Add draggable funtionality
