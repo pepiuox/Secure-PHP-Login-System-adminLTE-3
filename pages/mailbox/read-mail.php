@@ -144,7 +144,7 @@
                                 <div class="card-body p-0">
                                     <div class="mailbox-read-info">
                                         <h5>Message Subject Is Placed Here</h5>
-                                        <h6>From: support@adminlte.io
+                                        <h6>From: support@SPHPLSA3
                                             <span class="mailbox-read-time float-right">15 Feb. 2015 11:03 PM</span></h6>
                                     </div>
                                     <!-- /.mailbox-read-info -->
@@ -274,7 +274,7 @@
             <div class="float-right d-none d-sm-block">
                 <b>Version</b> 3.1.0-pre
             </div>
-            <strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+            <strong>Copyright &copy; 2014-2020 <a href="https://SPHPLSA3">SPHPLSA3</a>.</strong> All rights reserved.
         </footer>
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">

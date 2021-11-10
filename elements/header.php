@@ -11,7 +11,6 @@
         <!-- Theme style -->
         <link rel="stylesheet" href="<?php echo $base; ?>plugins/adminlte/css/adminlte.min.css">
         <link rel="stylesheet" href="<?php echo $base; ?>plugins/bootstrap/css/bootstrap.min.css">
-        
         <!-- overlayScrollbars -->
         <link rel="stylesheet" href="<?php echo $base; ?>plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
         <?php if ($fname === 'index') { ?>

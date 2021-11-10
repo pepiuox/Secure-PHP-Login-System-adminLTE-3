@@ -38,7 +38,7 @@
             <a href="login.php">Or sign in as a different user</a>
         </div>
         <div class="lockscreen-footer text-center">
-            Copyright &copy; 2014-2020 <b><a href="https://adminlte.io" class="text-black">AdminLTE.io</a></b><br>
+            Copyright &copy; 2014-2020 <b><a href="https://SPHPLSA3" class="text-black">SPHPLSA3</a></b><br>
             All rights reserved
         </div>
     </div>
