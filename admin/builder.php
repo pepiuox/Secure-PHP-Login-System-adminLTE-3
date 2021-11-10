@@ -56,20 +56,23 @@ if ($login->isLoggedIn() === true && $level->levels() === 9) {
         <html lang="en">
             <head>
                 <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
                 <title><?php echo SITE_NAME; ?> | Builder</title>
-                <link href="<?php echo $base; ?>plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>                
+                <link rel="stylesheet" href="<?php echo $base; ?>plugins/bootstrap/css/bootstrap.min.css">                
                 <!-- Font Awesome -->
-                <link rel="stylesheet" href="<?php echo $base; ?>plugins/fontawesome/css/fontawesome.min.css"  type="text/css"/>               
+                <link rel="stylesheet" href="<?php echo $base; ?>plugins/fontawesome/css/fontawesome.min.css">
+                <link rel="stylesheet" href="<?php echo $base; ?>plugins/fontawesome-free/css/fontawesome.min.css">
                 <!-- <link rel="stylesheet" href="<?php echo $base; ?>plugins/plugins/fontawesome-free/css/all.min.css"> --> 
+                <link rel="stylesheet" href="<?php echo $base; ?>plugins/css/editor.css">
+                <link rel="stylesheet" href="<?php echo $base; ?>plugins/css/tooltip.css">
                 <link rel="stylesheet" href="<?php echo $base; ?>plugins/css/toastr.min.css">
                 <link rel="stylesheet" href="<?php echo $base; ?>plugins/grapesjs/css/grapes.min.css">
-                <link href="<?php echo $base; ?>plugins/css/editor.css" rel="stylesheet" type="text/css"/>
                 <link rel="stylesheet" href="<?php echo $base; ?>plugins/grapesjs/css/grapesjs-preset-webpage.min.css">
-                <link href="<?php echo $base; ?>plugins/grapesjs/css/grapesjs-component-code-editor.min.css" rel="stylesheet" type="text/css"/>
-                <link rel="stylesheet" href="<?php echo $base; ?>plugins/css/tooltip.css">
+                <link rel="stylesheet" href="<?php echo $base; ?>plugins/grapesjs/css/grapesjs-component-code-editor.min.css">
                 <link rel="stylesheet" href="<?php echo $base; ?>plugins/grapesjs/css/grapesjs-plugin-filestack.css">
                 <link rel="stylesheet" href="<?php echo $base; ?>plugins/css/demos.css">
-                <link href="<?php echo $base; ?>plugins/grapesjs/css/grapesjs-project-manager.min.css" rel="stylesheet">
+                <link rel="stylesheet" href="<?php echo $base; ?>plugins/grapesjs/css/grapesjs-project-manager.min.css">
+                <!-- script -->
                 <script src="<?php echo $base; ?>plugins/jquery/jquery.min.js"></script>
                 <script src="<?php echo $base; ?>plugins/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"></script>            
                 <!--  <script src="<?php echo $base; ?>plugins/js/backbone-min.js"></script> -->
@@ -92,10 +95,10 @@ if ($login->isLoggedIn() === true && $level->levels() === 9) {
                 <script src="<?php echo $base; ?>plugins/grapesjs/js/grapesjs-plugin-ckeditor.min.js"></script>                            
                 <script src="<?php echo $base; ?>plugins/grapesjs/js/grapesjs-script-editor.min.js" type="text/javascript"></script>
                 <script src="<?php echo $base; ?>plugins/grapesjs/js/grapesjs-typed.js"></script>
-                <script src="<?php echo $base; ?>plugins/grapesjs/js/grapesjs-uikit"></script>
+                <script src="<?php echo $base; ?>plugins/grapesjs/js/grapesjs-uikit.js"></script>
                 <script src="<?php echo $base; ?>plugins/grapesjs/js/grapesjs-page-break.min.js"></script>                
-                <script src="<?php echo $base; ?>plugins/grapesjs/js/grapesjs-project-manager"></script>
-                <script src="<?php echo $base; ?>plugins/grapesjs/js/grapesjs-ga"></script>
+                <script src="<?php echo $base; ?>plugins/grapesjs/js/grapesjs-project-manager.js"></script>
+                <script src="<?php echo $base; ?>plugins/grapesjs/js/grapesjs-ga.js"></script>
                 <script src="<?php echo $base; ?>plugins/grapesjs/js/grapesjs-parser-postcss.min.js"></script>
                 <script src="<?php echo $base; ?>plugins/grapesjs/js/grapesjs-swiper-slider.min.js"></script>
                 <script>
@@ -232,12 +235,9 @@ if ($login->isLoggedIn() === true && $level->levels() === 9) {
                                                     Sign out
                                                 </button>
                                             </form>
-
                                         </li>
                                     </ul>
-                                    </ul>
                                 </div>
-
                             </div>
                         </nav>
 
@@ -936,85 +936,85 @@ if ($login->isLoggedIn() === true && $level->levels() === 9) {
                       });
 
 
-              window.editor = editor;
-              let pn = editor.Panels;
-              let modal = editor.Modal;
-              let cmdm = editor.Commands;
-              let blockManager = editor.BlockManager;
+                window.editor = editor;
+                let pn = editor.Panels;
+                let modal = editor.Modal;
+                let cmdm = editor.Commands;
+                let blockManager = editor.BlockManager;
 
-              cmdm.add('canvas-clear', function() {
+                cmdm.add('canvas-clear', function() {
                   if (confirm('Are you sure to clean the canvas?')) {
                       let comps = editor.DomComponents.clear();
                       setTimeout(function() {
                           localStorage.clear();
                       }, 0);
                   }
-              });
-              cmdm.add('set-device-desktop', {
+                });
+                cmdm.add('set-device-desktop', {
                   run: function(ed) {
                       ed.setDevice('Desktop');
                   },
                   stop: function() {}
-              });
-              cmdm.add('set-device-tablet', {
+                });
+                cmdm.add('set-device-tablet', {
                   run: function(ed) {
                       ed.setDevice('Tablet');
                   },
                   stop: function() {}
-              });
-              cmdm.add('set-device-mobile', {
+                });
+                cmdm.add('set-device-mobile', {
                   run: function(ed) {
                       ed.setDevice('Mobile portrait');
                   },
                   stop: function() {}
-              });
-              // Store DB
-              cmdm.add('dashboard', {
+                });
+                // Store DB
+                cmdm.add('dashboard', {
                   run: function(em, sender) {
                       sender.set('active', true);
                       dashboardPage();
                   }
-              });
-              cmdm.add('save-page', {
+                });
+                cmdm.add('save-page', {
                   run: function(em, sender) {
                       sender.set('active', true);
                       saveContent();
                   }
-              });
-              cmdm.add('view-page', {
+                });
+                cmdm.add('view-page', {
                   run: function(em, sender) {
                       sender.set('active', true);
                       viewContent();
                   }
-              });
-              cmdm.add('page-list', {
+                });
+                cmdm.add('page-list', {
                   run: function(em, sender) {
                       sender.set('active', true);
                       pageList();
                   }
-              });
-              cmdm.add('refresh-page', {
+                });
+                cmdm.add('refresh-page', {
                   run: function(em, sender) {
                       sender.set('active', true);
                       refreshContent();
                   }
-              });
-              cmdm.add('new-page', {
+                });
+                cmdm.add('new-page', {
                   run: function(em, sender) {
                       sender.set('active', true);
                       newContent();
                   }
-              });
-              cmdm.add('view-page', {
+                });
+                cmdm.add('view-page', {
                   run: function(em, sender) {
                       sender.set('active', true); //get full HTML structure after design
                       viewContent();
                   }
-              });
+                });
 
-              // Add info command
+                // Add info command
 
-              pn.addButton('views', {
+                pn.addButton('views', {
                   id: 'open-pages',
                   className: 'fa fa-file-o',
                   attributes: {
@@ -1022,8 +1022,8 @@ if ($login->isLoggedIn() === true && $level->levels() === 9) {
                   },
                   command: 'open-pages',
                   togglable: false
-              });
-              pn.addButton('options', {
+                });
+                pn.addButton('options', {
                   id: 'open-info',
                   className: 'fa fa-question-circle',
                   command: function() {
@@ -1033,18 +1033,18 @@ if ($login->isLoggedIn() === true && $level->levels() === 9) {
                       'title': 'About',
                       'data-tooltip-pos': 'bottom'
                   }
-              });
-              //More Buttom
-              pn.addButton('options', {
+                });
+                //More Buttom
+                pn.addButton('options', {
                   id: 'open-templates',
                   className: 'fa fa-folder-o',
                   attributes: {
                       title: 'Open projects and templates'
                   },
                   command: 'open-templates' //Open modal 
-              });
+                });
 
-              pn.addButton('options', [{
+                pn.addButton('options', [{
                   id: 'dashboard',
                   className: 'fa fa-tachometer',
                   command: 'dashboard',
@@ -1052,8 +1052,8 @@ if ($login->isLoggedIn() === true && $level->levels() === 9) {
                       title: 'Dashboard',
                       'data-tooltip-pos': 'bottom'
                   }
-              }]);
-              pn.addButton('options', [{
+                }]);
+                pn.addButton('options', [{
                   id: 'save-page',
                   className: 'fa fa-floppy-o',
                   command: 'save-page',
@@ -1061,8 +1061,8 @@ if ($login->isLoggedIn() === true && $level->levels() === 9) {
                       title: 'Save page',
                       'data-tooltip-pos': 'bottom'
                   }
-              }]);
-              pn.addButton('options', [{
+                }]);
+                pn.addButton('options', [{
                   id: 'page-list',
                   className: 'fa fa-list',
                   command: 'page-list',
@@ -1070,8 +1070,8 @@ if ($login->isLoggedIn() === true && $level->levels() === 9) {
                       title: 'Page list',
                       'data-tooltip-pos': 'bottom'
                   }
-              }]);
-              pn.addButton('options', [{
+                }]);
+                pn.addButton('options', [{
                   id: 'view-page',
                   className: 'fa fa-file-text-o',
                   command: 'view-page',
@@ -1079,8 +1079,8 @@ if ($login->isLoggedIn() === true && $level->levels() === 9) {
                       title: 'View Page',
                       'data-tooltip-pos': 'bottom'
                   }
-              }]);
-              pn.addButton('options', [{
+                }]);
+                pn.addButton('options', [{
                   id: 'refresh-page',
                   className: 'fa fa-refresh',
                   command: 'refresh-page',
@@ -1088,8 +1088,8 @@ if ($login->isLoggedIn() === true && $level->levels() === 9) {
                       title: 'Refresh page',
                       'data-tooltip-pos': 'bottom'
                   }
-              }]);
-              pn.addButton('options', [{
+                }]);
+                pn.addButton('options', [{
                   id: 'new-page',
                   className: 'fa fa-file-o',
                   command: 'new-page',
@@ -1097,25 +1097,25 @@ if ($login->isLoggedIn() === true && $level->levels() === 9) {
                       title: 'New page',
                       'data-tooltip-pos': 'bottom'
                   }
-              }]);
+                }]);
 
 
-              // Simple warn notifier
-              let origWarn = console.warn;
-              toastr.options = {
+                // Simple warn notifier
+                let origWarn = console.warn;
+                toastr.options = {
                   closeButton: true,
                   preventDuplicates: true,
                   showDuration: 250,
                   hideDuration: 150
-              };
-              console.warn = function(msg) {
+                };
+                console.warn = function(msg) {
                   if (msg.indexOf('[undefined]') == -1) {
                       toastr.warning(msg);
                   }
                   origWarn(msg);
-              };
-              // Add and beautify tooltips
-              [
+                };
+                // Add and beautify tooltips
+                [
                   ['sw-visibility', 'Show Borders'],
                   ['preview', 'Preview'],
                   ['fullscreen', 'Fullscreen'],
@@ -1124,26 +1124,26 @@ if ($login->isLoggedIn() === true && $level->levels() === 9) {
                   ['redo', 'Redo'],
                   ['gjs-open-import-webpage', 'Import'],
                   ['canvas-clear', 'Clear canvas']
-              ]
-              .forEach(function(item) {
+                ]
+                .forEach(function(item) {
                   pn.getButton('options', item[0]).set('attributes', {
                       title: item[1],
                       'data-tooltip-pos': 'bottom'
                   });
-              });
-              [
+                });
+                [
                   ['open-sm', 'Style Manager'],
                   ['open-layers', 'Layers'],
                   ['open-blocks', 'Blocks']
-              ]
-              .forEach(function(item) {
+                ]
+                .forEach(function(item) {
                   pn.getButton('views', item[0]).set('attributes', {
                       title: item[1],
                       'data-tooltip-pos': 'bottom'
                   });
-              });
-              let titles = document.querySelectorAll('*[title]');
-              for (let i = 0; i < titles.length; i++) {
+                });
+                let titles = document.querySelectorAll('*[title]');
+                for (let i = 0; i < titles.length; i++) {
                   let el = titles[i];
                   let title = el.getAttribute('title');
                   title = title ? title.trim() : '';
@@ -1151,16 +1151,16 @@ if ($login->isLoggedIn() === true && $level->levels() === 9) {
                       break;
                   el.setAttribute('data-tooltip', title);
                   el.setAttribute('title', '');
-              }
+                }
 
-              // Show borders by default
-              pn.getButton('options', 'sw-visibility').set('active', 1);
+                // Show borders by default
+                pn.getButton('options', 'sw-visibility').set('active', 1);
 
 
-              // Do stuff on load
-              editor.on('load', function() {
+                // Do stuff on load
+                editor.on('load', function() {
                   let $ = grapesjs.$;
-                          
+                                                                  
                   // Load and show settings and style manager
                   let openTmBtn = pn.getButton('views', 'open-tm');
                   openTmBtn && openTmBtn.set('active', 1);
@@ -1185,16 +1185,16 @@ if ($login->isLoggedIn() === true && $level->levels() === 9) {
                   // Open block manager
                   let openBlocksBtn = editor.Panels.getButton('views', 'open-blocks');
                   openBlocksBtn && openBlocksBtn.set('active', 1);
-              });
+                });
 
-              // function buttom
-              function viewContent() {
+                // function buttom
+                function viewContent() {
                   let id = '<?php echo $id; ?>';
                   let url = 'view.php?id=' + id;
                   window.open(url);
-              }
+                }
 
-              function saveContent() {
+                function saveContent() {
                   let idp = '<?php echo $id; ?>';
                   let content = editor.getHtml(); //get html content of document
                   let style = editor.getCss(); //get css content of document
@@ -1210,28 +1210,28 @@ if ($login->isLoggedIn() === true && $level->levels() === 9) {
                   }).done(function(rsp) {
                       alert(rsp);
                   });
-              }
+                }
 
-              function pageList() {
+                function pageList() {
                   let url = 'dashboard.php?cms=pagelist';
                   location.replace(url);
-              }
+                }
 
-              function dashboardPage() {
+                function dashboardPage() {
                   let url = 'dashboard.php';
                   location.replace(url);
-              }
+                }
 
-              function refreshContent() {
+                function refreshContent() {
                   location.reload();
-              }
+                }
 
-              function newContent() {
+                function newContent() {
                   let url = 'dashboard.php?cms=addpage';
                   location.replace(url);
-              }
+                }
 
-              function clearContent() {
+                function clearContent() {
                   let clear = 'clear';
                   $.ajax({
                       url: 'clearcontent.php',
@@ -1242,11 +1242,11 @@ if ($login->isLoggedIn() === true && $level->levels() === 9) {
                   }).done(function(rsp) {
                       $('#result').html(rsp);
                   });
-              }
+                }
 
-              function getContent() {}
+                function getContent() {}
 
-              function uploadImages() {
+                function uploadImages() {
                   let files = $('#gjs-am-uploadFile')[0].files[0];
                   formData.append('file', files);
                   aler(files);
@@ -1271,77 +1271,77 @@ if ($login->isLoggedIn() === true && $level->levels() === 9) {
                       let images = myJSON;
                       editor.AssetManager.add(images); //adding images to asset manager of GrapesJS
                   });
-              }
+                }
 
-                                                                   
+                                                                                                           
                 </script>
                 <script>
 
-        var btn = document.querySelector('.add');
-        var remove = document.querySelector('.pi-draggable');
+                var btn = document.querySelector('.add');
+                var remove = document.querySelector('.pi-draggable');
 
-        function dragStart(e) {
-          this.style.opacity = '0.4';
-          dragSrcEl = this;
-          e.dataTransfer.effectAllowed = 'move';
-          e.dataTransfer.setData('text/html', this.innerHTML);
-        };
+                function dragStart(e) {
+                this.style.opacity = '0.4';
+                dragSrcEl = this;
+                e.dataTransfer.effectAllowed = 'move';
+                e.dataTransfer.setData('text/html', this.innerHTML);
+                };
 
-        function dragEnter(e) {
-          this.classList.add('over');
-        }
+                function dragEnter(e) {
+                this.classList.add('over');
+                }
 
-        function dragLeave(e) {
-          e.stopPropagation();
-          this.classList.remove('over');
-        }
+                function dragLeave(e) {
+                e.stopPropagation();
+                this.classList.remove('over');
+                }
 
-        function dragOver(e) {
-          e.preventDefault();
-          e.dataTransfer.dropEffect = 'move';
-          return false;
-        }
+                function dragOver(e) {
+                e.preventDefault();
+                e.dataTransfer.dropEffect = 'move';
+                return false;
+                }
 
-        function dragDrop(e) {
-          if (dragSrcEl != this) {
-            dragSrcEl.innerHTML = this.innerHTML;
-            this.innerHTML = e.dataTransfer.getData('text/html');
-          }
-          return false;
-        }
+                function dragDrop(e) {
+                if (dragSrcEl != this) {
+                dragSrcEl.innerHTML = this.innerHTML;
+                this.innerHTML = e.dataTransfer.getData('text/html');
+                }
+                return false;
+                }
 
-        function dragEnd(e) {
-          var listItens = document.querySelectorAll('.pi-draggable');
-          [].forEach.call(listItens, function(item) {
-            item.classList.remove('over');
-          });
-          this.style.opacity = '1';
-        }
+                function dragEnd(e) {
+                var listItens = document.querySelectorAll('.pi-draggable');
+                [].forEach.call(listItens, function(item) {
+                item.classList.remove('over');
+                });
+                this.style.opacity = '1';
+                }
 
-        function addEventsDragAndDrop(el) {
-          el.addEventListener('dragstart', dragStart, false);
-          el.addEventListener('dragenter', dragEnter, false);
-          el.addEventListener('dragover', dragOver, false);
-          el.addEventListener('dragleave', dragLeave, false);
-          el.addEventListener('drop', dragDrop, false);
-          el.addEventListener('dragend', dragEnd, false);
-        }
+                function addEventsDragAndDrop(el) {
+                el.addEventListener('dragstart', dragStart, false);
+                el.addEventListener('dragenter', dragEnter, false);
+                el.addEventListener('dragover', dragOver, false);
+                el.addEventListener('dragleave', dragLeave, false);
+                el.addEventListener('drop', dragDrop, false);
+                el.addEventListener('dragend', dragEnd, false);
+                }
 
-        var listItens = document.querySelectorAll('.pi-draggable');
-        [].forEach.call(listItens, function(item) {
-          addEventsDragAndDrop(item);
-        });
+                var listItens = document.querySelectorAll('.pi-draggable');
+                [].forEach.call(listItens, function(item) {
+                addEventsDragAndDrop(item);
+                });
 
-                
+                                                        
                 </script>
                 <script>
-               var menu_btn = document.querySelector("#menu-btn");
-               var sidebar = document.querySelector("#sidebar");
-               var container = document.querySelector(".editor-wrap");
-               menu_btn.addEventListener("click", () => {
+                var menu_btn = document.querySelector("#menu-btn");
+                var sidebar = document.querySelector("#sidebar");
+                var container = document.querySelector(".editor-wrap");
+                menu_btn.addEventListener("click", () => {
                  sidebar.classList.toggle("active-nav");
                  container.classList.toggle("active-cont");
-               });
+                });
                 </script>
                 <script>
                 var $el = $(".pi-draggable");
@@ -1349,18 +1349,18 @@ if ($login->isLoggedIn() === true && $level->levels() === 9) {
                 var elWidth = $el.outerWidth();
 
                 function doResize(event, ui) {
-                  
+                                                          
                   var scale, origin;
-                    
+                                                            
                   scale = Math.min(
                     ui.size.width / elWidth,    
                     ui.size.height / elHeight
                   );
-                  
+                                                          
                   $el.css({
                     transform: "translate(-50%, -50%) " + "scale(" + scale + ")"
                   });
-                  
+                                                          
                 }
 
                 var starterData = { 
