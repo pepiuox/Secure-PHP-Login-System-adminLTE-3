@@ -131,7 +131,7 @@ function menuopt($menu) {
     echo '</select>' . "\n";
 }
 
-function enumsel($tble, $labelc, $nrow='') {
+function enumsel($tble, $labelc, $nrow = '') {
     global $conn;
     $remp = ucfirst(str_replace("_", " ", $labelc));
     $frmp = str_replace(" id", "", $remp);
@@ -224,20 +224,11 @@ function clean_string($string) {
 
     $string = str_replace(' ', '-', $string);
 
-    /*
-      $string = str_replace(
-      array("\", "¨", "º", "-", "~",
-      "#", "@", "|", "!", """,
-      "·", "$", "%", "&", "/",
-      "(", ")", "?", "'", "¡",
-      "¿", "[", "^", "<code>", "]",
-      "+", "}", "{", "¨", "´",
-      ">", "< ", ";", ",", ":",
-      ".", " "),
-      '',
-      $string
-      );
-     */
+    $string = str_replace(
+            array("¨", "º", "-", "~", "#", "@", "|", "!", '"',
+                "·", "$", "%", "&", "/", "(", ")",
+                "?", "'", "¡", "¿", "[", "^", "<code>", "]",
+                "+", "}", "{", "¨", "´", ">", "< ", ";", ",", ":", ".", " "), "", $string);
 
     return $string;
 }
